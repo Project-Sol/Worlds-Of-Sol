@@ -10,7 +10,8 @@ public class WorldsOfSol implements ModInitializer {
 	public void onInitialize() {
 		System.out.println("Worlds of Sol Loading");
 
-
+		ArmorRegistry.init();
+		StatusEffectRegistry.init();
 
 	}
 }
