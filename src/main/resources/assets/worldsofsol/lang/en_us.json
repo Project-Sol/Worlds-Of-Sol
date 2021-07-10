@@ -30,10 +30,19 @@
   "item.worldsofsol.olivine": "Olivine",
   "item.worldsofsol.oxifaribacte": "Oxifaribacte",
 
+  "item.minecraft.potion.effect.cosmic_breathing": "Potion of Cosmic Breathing",
+  "item.minecraft.potion.effect.cosmic_breathing_long": "Potion of Cosmic Breathing",
+
   "item.worldsofsol.exobone_helmet": "Exobone Helmet",
   "item.worldsofsol.exobone_chestplate": "Exobone Chestplate",
   "item.worldsofsol.exobone_leggings": "Exobone Leggings",
   "item.worldsofsol.exobone_boots": "Exobone Boots",
+
+  "item.worldsofsol.ferrotitanium_sword": "Ferrotitanium Sword",
+  "item.worldsofsol.ferrotitanium_pickaxe": "Ferrotitanium Pickaxe",
+  "item.worldsofsol.ferrotitanium_shovel": "Ferrotitanium Shovel",
+  "item.worldsofsol.ferrotitanium_axe": "Ferrotitanium Axe",
+  "item.worldsofsol.ferrotitanium_hoe": "Ferrotitanium Hoe",
 
   "item.worldsofsol.exobone_sword": "Exobone Ilmenite",
 

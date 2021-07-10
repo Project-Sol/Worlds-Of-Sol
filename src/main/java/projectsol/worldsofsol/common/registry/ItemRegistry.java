@@ -1,10 +1,13 @@
 package projectsol.worldsofsol.common.registry;
 
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
+import projectsol.worldsofsol.common.tools.WoSAxe;
+import projectsol.worldsofsol.common.tools.WoSHoe;
+import projectsol.worldsofsol.common.tools.WoSPickaxe;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -21,6 +24,12 @@ public class ItemRegistry {
     public static final Item OLIVINE = create("olivine", new Item(gen()));
     public static final Item OXIFARIBACTE = create("oxifaribacte", new Item(gen()));
 
+    //Tools
+    public static final ToolItem FERROTITANIUM_SWORD = create("ferrotitanium_sword", new SwordItem(MaterialRegistry.FERROTITANIUM_TOOL,3,-2.4F, gen()));
+    public static final ToolItem FERROTITANIUM_PICKAXE = create("ferrotitanium_pickaxe", new WoSPickaxe(MaterialRegistry.FERROTITANIUM_TOOL,1,-2.8F, gen()));
+    public static final ToolItem FERROTITANIUM_SHOVEL = create("ferrotitanium_shovel", new ShovelItem(MaterialRegistry.FERROTITANIUM_TOOL,1.5F,-3, gen()));
+    public static final ToolItem FERROTITANIUM_AXE = create("ferrotitanium_axe", new WoSAxe(MaterialRegistry.FERROTITANIUM_TOOL,6,-3.1F, gen()));
+    public static final ToolItem FERROTITANIUM_HOE = create("ferrotitanium_hoe", new WoSHoe(MaterialRegistry.FERROTITANIUM_TOOL,-2,-1, gen()));
 
     private static Item.Settings gen() {
         return new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP);
