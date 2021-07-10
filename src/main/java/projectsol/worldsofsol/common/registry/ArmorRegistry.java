@@ -17,10 +17,6 @@ public class ArmorRegistry {
     private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
     public static final ArmorMaterial EXOBONE_ARMOR_MATERIAL = new ExoboneArmor();
-    //public static final Item EXOBONE_HELMET = new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP));
-    //public static final Item EXOBONE_CHESTPLATE = new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP));
-    //public static final Item EXOBONE_LEGGINGS = new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP));
-    //public static final Item EXOBONE_BOOTS = new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP));
 
     public static final Item EXOBONE_HELMET = create("exobone_helmet", new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.HEAD, gen()));
     public static final Item EXOBONE_CHESTPLATE = create("exobone_chestplate", new ArmorItem(EXOBONE_ARMOR_MATERIAL, EquipmentSlot.CHEST, gen()));
@@ -37,12 +33,6 @@ public class ArmorRegistry {
 
     public static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
-/*
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "exobone_helmet"), EXOBONE_HELMET);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "exobone_chestplate"), EXOBONE_CHESTPLATE);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "exobone_leggings"), EXOBONE_LEGGINGS);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "exobone_boots"), EXOBONE_BOOTS);
 
- */
     }
 }
