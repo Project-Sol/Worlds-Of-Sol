@@ -12,7 +12,6 @@ public class ItemRegistry {
 
     private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
-        //public static final Item CHITIN = new Item(new FabricItemSettings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP));
     public static final Item CHITIN = create("chitin", new Item(gen()));
 
 
@@ -26,6 +25,5 @@ public class ItemRegistry {
     public static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
 
-        //Registry.register(Registry.ITEM, new Identifier(WorldsOfSol.MODID, "chitin"), CHITIN);
     }
 }
