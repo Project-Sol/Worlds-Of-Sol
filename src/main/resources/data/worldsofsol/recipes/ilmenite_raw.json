@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "worldsofsol:ilmenite_raw"
+  },
+  "result": "worldsofsol:ilmenite_ingot",
+  "experience": 0.15,
+  "cookingtime": 200
+}
+

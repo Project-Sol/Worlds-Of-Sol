@@ -13,6 +13,8 @@ public class ItemRegistry {
     private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
     public static final Item CHITIN = create("chitin", new Item(gen()));
+    public static final Item ILMENITE_RAW = create("ilmenite_raw", new Item(gen()));
+    public static final Item ILMENITE_INGOT = create("ilmenite_ingot", new Item(gen()));
 
 
     private static Item.Settings gen() {

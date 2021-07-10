@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "worldsofsol:item/basic/chitin"
+    "layer0": "worldsofsol:item/material/chitin"
   }
 }

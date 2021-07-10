@@ -1,0 +1,19 @@
+{
+  "block.worldsofsol.ilmenite_ore": "Ilmenite Ore",
+  "block.worldsofsol.lunar_regolith": "Lunar Regolith",
+  "block.worldsofsol.moon_rock": "Moon Rock",
+  "block.worldsofsol.cobbled_moon_rock": "Cobbler Moon Rock",
+  "block.worldsofsol.moon_bricks": "Moon Bricks",
+  "block.worldsofsol.moon_brick_stairs": "Moon Brick Stairs",
+  "block.worldsofsol.moon_brick_slab": "Moon Brick Slab",
+
+  "item.worldsofsol.chitin": "Chitin",
+  "item.worldsofsol.ilmenite_raw": "Raw Ilmenite",
+  "item.worldsofsol.ilmenite_ingot": "Ferrotitanium Ingot",
+  "item.worldsofsol.exobone_helmet": "Exobone Helmet",
+  "item.worldsofsol.exobone_chestplate": "Exobone Chestplate",
+  "item.worldsofsol.exobone_leggings": "Exobone Leggings",
+  "item.worldsofsol.exobone_boots": "Exobone Boots",
+
+  "item.worldsofsol.exobone_sword": "Exobone Ilmenite"
+}
