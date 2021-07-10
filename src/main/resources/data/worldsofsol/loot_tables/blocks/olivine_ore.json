@@ -25,7 +25,7 @@
                   }
                 }
               ],
-              "name": "worldsofsol:ilmenite_ore"
+              "name": "worldsofsol:olivine_ore"
             },
             {
               "type": "minecraft:item",
@@ -39,7 +39,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "worldsofsol:ilmenite_raw"
+              "name": "worldsofsol:olivine"
             }
           ]
         }

@@ -16,6 +16,9 @@ public class ItemRegistry {
     public static final Item ILMENITE_RAW = create("ilmenite_raw", new Item(gen()));
     public static final Item ILMENITE_INGOT = create("ilmenite_ingot", new Item(gen()));
 
+    public static final Item OLIVINE = create("olivine", new Item(gen()));
+    public static final Item OXIFARIBACTE = create("oxifaribacte", new Item(gen()));
+
 
     private static Item.Settings gen() {
         return new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP);
