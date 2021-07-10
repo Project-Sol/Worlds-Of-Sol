@@ -1,6 +1,7 @@
 package projectsol.worldsofsol.common.registry;
 
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
@@ -13,9 +14,10 @@ public class ItemRegistry {
     private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
     public static final Item CHITIN = create("chitin", new Item(gen()));
+
+    //Materials
     public static final Item ILMENITE_RAW = create("ilmenite_raw", new Item(gen()));
     public static final Item ILMENITE_INGOT = create("ilmenite_ingot", new Item(gen()));
-
     public static final Item OLIVINE = create("olivine", new Item(gen()));
     public static final Item OXIFARIBACTE = create("oxifaribacte", new Item(gen()));
 
@@ -27,8 +29,10 @@ public class ItemRegistry {
         ITEMS.put(item, new Identifier(WorldsOfSol.MODID, name));
         return item;
     }
+
     public static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
+
 
     }
 }

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "worldsofsol:moon_brick_wall",
+    "worldsofsol:moon_rock_wall",
+    "worldsofsol:cobbled_moon_rock_wall"
+  ]
+}

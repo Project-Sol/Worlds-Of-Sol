@@ -1,16 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "crafting_shaped",
   "pattern": [
-    "X X",
-    "XXX",
-    "XXX"
+    "# #",
+    "###",
+    "###"
   ],
   "key": {
-    "X": {
-      "item": "wordlsofsol:chitin"
+    "#": {
+      "item": "worldsofsol:chitin"
     }
   },
   "result": {
-    "item": "worldsofsol:exobone_chestplate"
+    "item": "worldsofsol:exobone_helmet"
   }
 }

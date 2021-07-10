@@ -1,19 +1,33 @@
 {
+  "itemGroup.worldsofsol.worldsofsol": "World of Sol",
 
   "block.worldsofsol.lunar_regolith": "Lunar Regolith",
   "block.worldsofsol.moon_rock": "Moon Rock",
-  "block.worldsofsol.cobbled_moon_rock": "Cobbler Moon Rock",
+  "block.worldsofsol.cobbled_moon_rock": "Cobbled Moon Rock",
   "block.worldsofsol.moon_bricks": "Moon Bricks",
   "block.worldsofsol.moon_brick_stairs": "Moon Brick Stairs",
   "block.worldsofsol.moon_brick_slab": "Moon Brick Slab",
+  "block.worldsofsol.moon_rock_stairs": "Moon Rock Stairs",
+  "block.worldsofsol.moon_rock_slab": "Moon Rock Slab",
+  "block.worldsofsol.cobbled_moon_rock_stairs": "Cobbled Moon Rock Stairs",
+  "block.worldsofsol.cobbled_moon_rock_slab": "Cobbled Moon Rock Slab",
+  "block.worldsofsol.moon_rock_wall": "Moon Rock Wall",
+  "block.worldsofsol.cobbled_moon_rock_wall": "Cobbled Moon Rock Wall",
+  "block.worldsofsol.moon_brick_wall": "Moon Brick Wall",
+
+  "block.worldsofsol.ilmenite_raw_block": "Raw Ilmenite Block",
+  "block.worldsofsol.ferrotitanium_block": "Ferrotitanium Block",
+  "block.worldsofsol.olivine_block": "Olivine Block",
+  "block.worldsofsol.oxifaribacte_block": "Oxifaribacte Block",
 
   "block.worldsofsol.ilmenite_ore": "Ilmenite Ore",
   "block.worldsofsol.olivine_ore": "Olivine Ore",
+  "block.worldsofsol.oxifaribacte_ore": "Oxifaribacte Ore",
 
   "item.worldsofsol.chitin": "Chitin",
   "item.worldsofsol.ilmenite_raw": "Raw Ilmenite",
   "item.worldsofsol.ilmenite_ingot": "Ferrotitanium Ingot",
-  "item.worldsofsol.olivine_crystal": "Olivine Crystal",
+  "item.worldsofsol.olivine": "Olivine",
   "item.worldsofsol.oxifaribacte": "Oxifaribacte",
 
   "item.worldsofsol.exobone_helmet": "Exobone Helmet",
