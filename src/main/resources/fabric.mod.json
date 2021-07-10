@@ -20,10 +20,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "projectsol.worlds.of.sol.WorldsOfSol"
+      "projectsol.worldsofsol.WorldsOfSol"
     ],
     "client": [
-      "projectsol.worlds.of.sol.client.WorldsOfSolClient"
+      "projectsol.worldsofsol.client.WorldsOfSolClient"
     ]
   },
   "mixins": [
