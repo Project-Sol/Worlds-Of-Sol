@@ -158,3 +158,116 @@
 /.idea/vcs.xml
 /.idea/modules/Worlds-Of-Sol.main.iml
 /.idea/modules/Worlds-Of-Sol.test.iml
+/run/saves/New World/playerdata/79f8754e-14dd-38b7-8860-09cab9cfb920.dat
+/run/saves/New World/playerdata/79f8754e-14dd-38b7-8860-09cab9cfb920.dat_old
+/run/saves/New World/advancements/79f8754e-14dd-38b7-8860-09cab9cfb920.json
+/run/saves/New World/stats/79f8754e-14dd-38b7-8860-09cab9cfb920.json
+/run/logs/2021-07-10-1.log.gz
+/build/classes/java/main/projectsol/worldsofsol/common/registry/ArmorRegistry.class
+/build/classes/java/main/projectsol/worldsofsol/common/item/BasicSwordItem.class
+/build/classes/java/main/projectsol/worldsofsol/common/registry/BlockRegistry.class
+/run/saves/New World/playerdata/c0f25d98-743c-364e-a2cd-82567612d750.dat
+/run/saves/New World/playerdata/c0f25d98-743c-364e-a2cd-82567612d750.dat_old
+/run/saves/New World/advancements/c0f25d98-743c-364e-a2cd-82567612d750.json
+/run/saves/New World/stats/c0f25d98-743c-364e-a2cd-82567612d750.json
+/build/resources/main/assets/worldsofsol/models/item/chitin.json
+/.gradle/7.0.2/javaCompile/classAnalysis.bin
+/build/resources/main/assets/worldsofsol/blockstates/cobbled_moon_rock.json
+/build/resources/main/assets/worldsofsol/models/block/cobbled_moon_rock.json
+/build/resources/main/assets/worldsofsol/models/item/cobbled_moon_rock.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/cobbled_moon_rock.json
+/build/classes/java/main/projectsol/worldsofsol/common/effect/CosmicBreathingStatusEffect.class
+/build/classes/java/main/projectsol/worldsofsol/common/block/CustomStairsBlock.class
+/run/logs/debug.log
+/run/logs/debug-1.log.gz
+/build/classes/java/main/projectsol/worldsofsol/common/registry/DimensionRegistry.class
+/.gradle/7.0.2/executionHistory/executionHistory.bin
+/.gradle/7.0.2/executionHistory/executionHistory.lock
+/build/resources/main/assets/worldsofsol/models/item/exobone_boots.json
+/build/resources/main/data/worldsofsol/recipes/exobone_boots.json
+/build/resources/main/assets/worldsofsol/textures/item/armor/exobone_boots.png
+/build/resources/main/data/worldsofsol/recipes/exobone_chest.json
+/build/resources/main/assets/worldsofsol/models/item/exobone_chestplate.json
+/build/resources/main/assets/worldsofsol/textures/item/armor/exobone_chestplate.png
+/build/resources/main/assets/worldsofsol/models/item/exobone_helmet.json
+/build/resources/main/data/worldsofsol/recipes/exobone_helmet.json
+/build/resources/main/assets/worldsofsol/textures/item/armor/exobone_helmet.png
+/build/resources/main/assets/minecraft/textures/models/armor/exobone_layer_1.png
+/build/resources/main/assets/minecraft/textures/models/armor/exobone_layer_2.png
+/build/resources/main/assets/worldsofsol/models/item/exobone_leggings.json
+/build/resources/main/data/worldsofsol/recipes/exobone_leggings.json
+/build/resources/main/assets/worldsofsol/textures/item/armor/exobone_leggings.png
+/build/resources/main/assets/worldsofsol/models/item/exobone_sword.json
+/build/resources/main/assets/worldsofsol/textures/item/tool/exobone_sword.png
+/build/classes/java/main/projectsol/worldsofsol/common/armor/ExoboneArmor.class
+/build/resources/main/fabric.mod.json
+/run/saves/New World/data/fabricDynamicRegistry.dat
+/run/saves/New World/data/fabricRegistry.dat
+/run/saves/New World/data/fabricRegistry.dat.1
+/.gradle/7.0.2/fileHashes/fileHashes.bin
+/run/saves/New World/icon.png
+/run/config/fabric/indigo-renderer.properties
+/build/classes/java/main/projectsol/worldsofsol/common/registry/ItemRegistry.class
+/.gradle/7.0.2/javaCompile/jarAnalysis.bin
+/.gradle/7.0.2/javaCompile/javaCompile.lock
+/run/logs/latest.log
+/run/saves/New World/level.dat
+/run/saves/New World/level.dat_old
+/build/resources/main/assets/worldsofsol/blockstates/lunar_regolith.json
+/build/resources/main/assets/worldsofsol/models/block/lunar_regolith.json
+/build/resources/main/assets/worldsofsol/models/item/lunar_regolith.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/lunar_regolith.json
+/run/.mixin.out/audit/mixin_implementation_report.csv
+/run/.mixin.out/audit/mixin_implementation_report.txt
+/build/resources/main/data/worldsofsol/dimension/moon.json
+/build/resources/main/assets/worldsofsol/blockstates/moon_brick_slab.json
+/build/resources/main/assets/worldsofsol/models/block/moon_brick_slab.json
+/build/resources/main/assets/worldsofsol/models/item/moon_brick_slab.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/moon_brick_slab.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/moon_brick_stair.json
+/build/resources/main/assets/worldsofsol/blockstates/moon_brick_stairs.json
+/build/resources/main/assets/worldsofsol/models/block/moon_brick_stairs.json
+/build/resources/main/assets/worldsofsol/models/item/moon_brick_stairs.json
+/build/resources/main/assets/worldsofsol/blockstates/moon_bricks.json
+/build/resources/main/assets/worldsofsol/models/block/moon_bricks.json
+/build/resources/main/assets/worldsofsol/models/item/moon_bricks.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/moon_bricks.json
+/build/resources/main/assets/worldsofsol/blockstates/moon_rock.json
+/build/resources/main/assets/worldsofsol/models/block/moon_rock.json
+/build/resources/main/assets/worldsofsol/models/item/moon_rock.json
+/build/resources/main/data/worldsofsol/loot_tables/blocks/moon_rock.json
+/build/resources/main/data/worldsofsol/dimension_type/moon_type.json
+/build/classes/java/main/projectsol/worldsofsol/common/world/dimension/MoonChunkGenerator.class
+/build/classes/java/main/projectsol/worldsofsol/common/world/dimension/MoonDimension.class
+/run/options.txt
+/.gradle/buildOutputCleanup/outputFiles.bin
+/run/saves/New World/entities/r.0.0.mca
+/run/saves/New World/poi/r.0.0.mca
+/run/saves/New World/region/r.0.0.mca
+/run/saves/New World/region/r.0.1.mca
+/run/saves/New World/entities/r.0.-1.mca
+/run/saves/New World/poi/r.0.-1.mca
+/run/saves/New World/region/r.0.-1.mca
+/run/saves/New World/entities/r.-1.0.mca
+/run/saves/New World/poi/r.-1.0.mca
+/run/saves/New World/region/r.-1.0.mca
+/run/saves/New World/region/r.-1.1.mca
+/run/saves/New World/entities/r.-1.-1.mca
+/run/saves/New World/poi/r.-1.-1.mca
+/run/saves/New World/region/r.-1.-1.mca
+/build/resources/main/assets/worldsofsol/textures/mob_effect/radiation.png
+/build/classes/java/main/projectsol/worldsofsol/common/effect/RadiationStatusEffect.class
+/run/saves/New World/data/raids.dat
+/run/saves/New World/DIM-1/data/raids.dat
+/run/saves/New World/DIM1/data/raids_end.dat
+/.gradle/7.0.2/fileHashes/resourceHashesCache.bin
+/run/saves/New World/session.lock
+/build/tmp/compileJava/source-classes-mapping.txt
+/build/classes/java/main/projectsol/worldsofsol/common/registry/StatusEffectRegistry.class
+/.gradle/7.0.2/javaCompile/taskHistory.bin
+/build/resources/main/assets/worldsofsol/temp_icon.png
+/build/classes/java/main/projectsol/worldsofsol/common/registry/ToolRegistry.class
+/run/usercache.json
+/build/classes/java/main/projectsol/worldsofsol/WorldsOfSol.class
+/build/resources/main/worldsofsol.mixins.json
+/build/classes/java/main/projectsol/worldsofsol/client/WorldsOfSolClient.class
