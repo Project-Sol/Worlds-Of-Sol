@@ -33,6 +33,9 @@ public class BlockRegistry {
     public static final Block ILMENITE_ORE = create("ilmenite_ore", new Block(FabricBlockSettings.of(Material.STONE)
             .strength(2.5F, 4.0F)
             .breakByTool(FabricToolTags.PICKAXES, 1)), true);
+    public static final Block OLIVINE_ORE = create("olivine_ore", new Block(FabricBlockSettings.of(Material.STONE)
+            .strength(2.5F, 4.0F)
+            .breakByTool(FabricToolTags.PICKAXES, 1)), true);
 
     private static <T extends Block> T create(String name, T block, boolean createItem) {
         BLOCKS.put(block, new Identifier(WorldsOfSol.MODID, name));
@@ -50,25 +53,6 @@ public class BlockRegistry {
 
         BLOCKS.keySet().forEach(block -> Registry.register(Registry.BLOCK, BLOCKS.get(block), block));
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
-/*
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "lunar_regolith"), LUNAR_REGOLITH);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "lunar_regolith"), new BlockItem(LUNAR_REGOLITH, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "moon_rock"), MOON_ROCK);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "moon_rock"), new BlockItem(MOON_ROCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "cobbled_moon_rock"), COBBLED_MOON_ROCK);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "cobbled_moon_rock"), new BlockItem(COBBLED_MOON_ROCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "moon_bricks"), MOON_BRICKS);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "moon_bricks"), new BlockItem(MOON_BRICKS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "moon_brick_slab"), MOON_BRICK_SLAB);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "moon_brick_slab"), new BlockItem(MOON_BRICK_SLAB, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-
-        Registry.register(Registry.BLOCK, new Identifier("worldsofsol", "moon_brick_stairs"), MOON_BRICK_STAIRS);
-        Registry.register(Registry.ITEM, new Identifier("worldsofsol", "moon_brick_stairs"), new BlockItem(MOON_BRICK_STAIRS, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-
- */
     }
 }
