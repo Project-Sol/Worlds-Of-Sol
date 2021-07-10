@@ -1,8 +1,3 @@
 {
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "worldsofsol:block/moon_bricks",
-    "top": "worldsofsol:block/moon_bricks",
-    "side": "worldsofsol:block/moon_bricks"
-  }
+  "parent": "worldsofsol:block/moon_brick_stairs"
 }

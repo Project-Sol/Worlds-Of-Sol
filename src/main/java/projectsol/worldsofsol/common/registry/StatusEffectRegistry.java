@@ -34,8 +34,6 @@ public class StatusEffectRegistry {
     public static void init() {
         STATUS_EFFECTS.keySet().forEach(effect -> Registry.register(Registry.STATUS_EFFECT, STATUS_EFFECTS.get(effect), effect));
 
-       // Registry.register(Registry.STATUS_EFFECT, new Identifier("worldsofsol", "radiation"), RADIATION);
-       // Registry.register(Registry.STATUS_EFFECT, new Identifier("worldsofsol", "cosmic_breathing"), COSMIC_BREATHING);
 
         Registry.register(Registry.POTION, new Identifier("worldsofsol", "cosmic_breathing_potion"), COSMIC_BREATHING_POTION);
         Registry.register(Registry.POTION, new Identifier("worldsofsol", "long_cosmic_breathing_potion"), COSMIC_BREATHING_POTION_LONG);
