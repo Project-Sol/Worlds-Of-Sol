@@ -22,6 +22,7 @@ public class WorldsOfSol implements ModInitializer {
 		ArmorRegistry.init();
 		StatusEffectRegistry.init();
 		ToolRegistry.init();
+		DimensionRegistry.init();
 		
 	}
 }
