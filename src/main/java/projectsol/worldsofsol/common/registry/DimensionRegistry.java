@@ -22,6 +22,7 @@ import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
+import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.world.dimension.MoonChunkGenerator;
 
 public class DimensionRegistry {
@@ -41,11 +42,11 @@ public class DimensionRegistry {
             new Identifier("worldsofsol", "moon_type")
     );
 
-    public static void register() {
+    public static void init() {
 
-        Registry.register(Registry.CHUNK_GENERATOR, new Identifier("worldsofsol", "moon"), MoonChunkGenerator.CODEC);
+        Registry.register(Registry.CHUNK_GENERATOR, new Identifier(WorldsOfSol.MODID, "moon"), MoonChunkGenerator.CODEC);
 
-        MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier("worldsofsol", "moon"));
+        MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             ServerWorld overworld = server.getWorld(World.OVERWORLD);
@@ -68,6 +69,7 @@ public class DimensionRegistry {
             if (!teleported.getPos().equals(target.position)) throw new AssertionError("Target Position not reached.");
         });
     }
+
 
     private int swapTargeted(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         ServerPlayerEntity player = context.getSource().getPlayer();
