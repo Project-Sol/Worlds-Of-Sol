@@ -49,7 +49,7 @@ public class BlockRegistry {
             .strength(3F, 4.5F)
             .breakByTool(FabricToolTags.PICKAXES, 1)), true);
 
-    public static final Block ILMENITE_RAW_BLOCK = create("ilmenite_raw_block", new Block(copyOf(BlockRegistry.ILMENITE_ORE)), true);
+    public static final Block ILMENITE_RAW_BLOCK = create("ilmenite_raw_block", new Block(copyOf(Blocks.RAW_IRON_BLOCK)), true);
     public static final Block FERROTITANIUM_BLOCK = create("ferrotitanium_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OLIVINE_BLOCK = create("olivine_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OXIFARIBACTE_BLOCK = create("oxifaribacte_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);

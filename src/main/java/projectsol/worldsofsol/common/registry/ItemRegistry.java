@@ -5,6 +5,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
+import projectsol.worldsofsol.common.item.BasicSwordItem;
 import projectsol.worldsofsol.common.tools.WoSAxe;
 import projectsol.worldsofsol.common.tools.WoSHoe;
 import projectsol.worldsofsol.common.tools.WoSPickaxe;
@@ -25,6 +26,8 @@ public class ItemRegistry {
     public static final Item OXIFARIBACTE = create("oxifaribacte", new Item(gen()));
 
     //Tools
+    public static final Item EXOBONE_SWORD = create("exobone_sword", new BasicSwordItem(ToolMaterials.STONE, 2, -2.4F, gen()));
+
     public static final ToolItem FERROTITANIUM_SWORD = create("ferrotitanium_sword", new SwordItem(MaterialRegistry.FERROTITANIUM_TOOL,3,-2.4F, gen()));
     public static final ToolItem FERROTITANIUM_PICKAXE = create("ferrotitanium_pickaxe", new WoSPickaxe(MaterialRegistry.FERROTITANIUM_TOOL,1,-2.8F, gen()));
     public static final ToolItem FERROTITANIUM_SHOVEL = create("ferrotitanium_shovel", new ShovelItem(MaterialRegistry.FERROTITANIUM_TOOL,1.5F,-3, gen()));

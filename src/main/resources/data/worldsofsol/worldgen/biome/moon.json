@@ -1,0 +1,45 @@
+{
+  "effects": {
+    "sky_color": 0,
+    "foliage_color": 14483329,
+    "grass_color": 11665355,
+    "fog_color": 16777215,
+    "water_color": 5826047,
+    "water_fog_color": 5826047,
+    "music": {}
+  },
+  "surface_builder": "worldsofsol:moon_surface_builder",
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "worldsofsol:ilmenite_ore",
+      "worldsofsol:olivine_ore"
+    ],
+    [],
+    [],
+    []
+  ],
+  "starts": [],
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {
+  },
+  "player_spawn_friendly": true,
+  "precipitation": "rain",
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "category": "plains",
+  "depth": 0.125,
+  "scale": 0.1
+}
