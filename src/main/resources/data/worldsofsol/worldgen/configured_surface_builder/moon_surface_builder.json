@@ -1,0 +1,21 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "worldsodsol:lunar_regolith",
+      "Properties": {
+        "snowy": "false"
+      }
+    },
+    "under_material": {
+      "Name": "worldsofsol:lunar_regolith",
+      "Properties": {
+      }
+    },
+    "underwater_material": {
+      "Name": "worldsodsol:lunar_regolith",
+      "Properties": {
+      }
+    }
+  },
+  "type": "worldsofsol:surface_builder"
+}
