@@ -19,6 +19,7 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import projectsol.worldsofsol.common.registry.*;
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
+import projectsol.worldsofsol.common.world.dimension.MoonRegistry;
 
 public class WorldsOfSol implements ModInitializer {
 
@@ -48,6 +49,7 @@ public class WorldsOfSol implements ModInitializer {
 		ArmorRegistry.init();
 		StatusEffectRegistry.init();
 		MoonDimension.init();
+		MoonRegistry.init();
 
 		RegistryKey<ConfiguredFeature<?, ?>> oreOxifaribacteOverworldOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
 				new Identifier(WorldsOfSol.MODID, "ore_oxifaribacte_overworld"));
