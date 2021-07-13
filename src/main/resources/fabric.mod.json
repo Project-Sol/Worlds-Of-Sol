@@ -6,16 +6,16 @@
   "name": "Worlds of Sol",
   "description": "An immersive space mod that revolves around magic instead of tech.",
   "authors": [
+    "MrSterner",
     "Safro",
     "Crydigo"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+
   },
 
   "license": "ALl Rights Reserved",
-  "icon": "assets/worldsofsol/temp_icon.png",
+  "icon": "assets/worldsofsol/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,7 +23,7 @@
       "projectsol.worldsofsol.WorldsOfSol"
     ],
     "client": [
-      "projectsol.worldsofsol.client.WorldsOfSolClient"
+      "projectsol.worldsofsol.WorldsOfSolClient"
     ]
   },
   "mixins": [

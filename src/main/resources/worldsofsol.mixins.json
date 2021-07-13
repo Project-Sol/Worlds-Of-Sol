@@ -4,7 +4,8 @@
   "package": "projectsol.worldsofsol.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "BrewingRegistryMixin"
+    "BrewingRegistryMixin",
+    "LivingEntityMixin"
   ],
   "client": [
 

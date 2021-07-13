@@ -7,10 +7,13 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.gen.carver.Carver;
 import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.block.CustomStairsBlock;
 import static net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings.copyOf;
 
+import java.awt.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -53,6 +56,7 @@ public class BlockRegistry {
     public static final Block FERROTITANIUM_BLOCK = create("ferrotitanium_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OLIVINE_BLOCK = create("olivine_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OXIFARIBACTE_BLOCK = create("oxifaribacte_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
+    public static final Block METEORITE = create("meteorite", new Block(copyOf(Blocks.IRON_BLOCK)), true);
 
     private static <T extends Block> T create(String name, T block, boolean createItem) {
         BLOCKS.put(block, new Identifier(WorldsOfSol.MODID, name));
