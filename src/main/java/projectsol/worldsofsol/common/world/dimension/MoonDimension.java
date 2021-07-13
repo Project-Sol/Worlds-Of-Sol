@@ -12,6 +12,8 @@ import projectsol.worldsofsol.common.world.gen.MoonSurfaceBuilderConfig;
 
 
 public class MoonDimension {
+    public static final RegistryKey<World> MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, WorldsOfSol.locate("moon"));
+
     private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(
             Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon")
     );
@@ -23,5 +25,8 @@ public class MoonDimension {
     public static void init(){
         SurfaceBuilder<MoonSurfaceBuilderConfig> MOON_SURFACE_BUILDER = Registry.register(Registry.SURFACE_BUILDER, WorldsOfSol.locate("surface_builder"), new MoonSurfaceBuilder());
         WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
+        RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(
+                Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon")
+        );
     }
 }

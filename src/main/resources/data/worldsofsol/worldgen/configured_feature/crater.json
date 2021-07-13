@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:decorated",
+  "config": {
+    "feature": {
+      "type": "worldsofsol:crater",
+      "config": {
+        "state": {
+          "Name": "minecraft:air",
+          "Properties": {
+            "level": "0"
+          }
+        }
+      }
+    },
+    "decorator": {
+      "type": "minecraft:decorated",
+      "config": {
+        "inner": {
+          "type": "minecraft:chance",
+          "config": {
+            "chance": 2
+          }
+        },
+        "outer": {
+          "type": "minecraft:heightmap",
+          "config": {
+            "heightmap": "MOTION_BLOCKING"
+          }
+        }
+      }
+    }
+  }
+}

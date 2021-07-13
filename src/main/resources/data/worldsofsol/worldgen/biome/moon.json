@@ -9,7 +9,10 @@
     "music": {}
   },
   "surface_builder": "worldsofsol:moon_surface_builder",
-  "carvers": {},
+  "carvers": {
+    "air": [
+    "worldsofsol:moon_crater"
+  ]},
   "features": [
     [],
     [],
