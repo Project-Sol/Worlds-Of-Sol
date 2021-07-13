@@ -21,10 +21,12 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import projectsol.worldsofsol.common.registry.*;
+
 import projectsol.worldsofsol.common.world.carver.CraterCarver;
 import projectsol.worldsofsol.common.world.carver.CraterConfig;
 import projectsol.worldsofsol.common.world.gen.MoonSurfaceBuilder;
 import projectsol.worldsofsol.common.world.gen.MoonSurfaceBuilderConfig;
+
 
 public class WorldsOfSol implements ModInitializer {
 
@@ -59,8 +61,10 @@ public class WorldsOfSol implements ModInitializer {
 		ItemRegistry.init();
 		ArmorRegistry.init();
 		StatusEffectRegistry.init();
+
 		SurfaceBuilder<MoonSurfaceBuilderConfig> MOON_SURFACE_BUILDER = Registry.register(Registry.SURFACE_BUILDER, WorldsOfSol.locate("surface_builder"), new MoonSurfaceBuilder());
 		MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
+
 
 		RegistryKey<ConfiguredFeature<?, ?>> oreOxifaribacteOverworldOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
 				new Identifier(WorldsOfSol.MODID, "ore_oxifaribacte_overworld"));
