@@ -1,28 +1,25 @@
 package projectsol.worldsofsol;
 
-import io.github.amerebagatelle.fabricskyboxes.SkyboxManager;
 import net.fabricmc.api.ClientModInitializer;
 
-import io.github.amerebagatelle.fabricskyboxes.skyboxes.SkyboxType;
-import io.github.amerebagatelle.fabricskyboxes.util.object.*;
-import net.minecraft.client.texture.SpriteAtlasTexture;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec3f;
-import net.minecraft.util.registry.Registry;
-import projectsol.worldsofsol.client.TestSkybox;
-
 public class WorldsOfSolClient implements ClientModInitializer {
+    /*
     public static final SkyboxType<TestSkybox> TYPE;
     public static final DefaultProperties PROPS;
     public static final Conditions CONDITIONS;
     public static final Decorations DECORATIONS;
 
+     */
+
     @Override
     public void onInitializeClient() {
+        /*
         Registry.register(SkyboxType.REGISTRY, TYPE.createId("test"), TYPE);
         SkyboxManager.getInstance().addPermanentSkybox(TestSkybox.INSTANCE);
+
+         */
     }
+    /*
 
     static {
         TYPE = SkyboxType.Builder.create(
@@ -58,4 +55,6 @@ public class WorldsOfSolClient implements ClientModInitializer {
                 .fade(new Fade(1000, 2000, 11000, 12000, false))
                 .build();
     }
+
+     */
 }
