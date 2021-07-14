@@ -22,8 +22,8 @@ import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import projectsol.worldsofsol.common.registry.*;
 
-import projectsol.worldsofsol.common.world.carver.CraterCarver;
-import projectsol.worldsofsol.common.world.carver.CraterConfig;
+import projectsol.worldsofsol.common.world.gen.carver.CraterCarver;
+import projectsol.worldsofsol.common.world.gen.carver.CraterConfig;
 import projectsol.worldsofsol.common.world.gen.MoonSurfaceBuilder;
 import projectsol.worldsofsol.common.world.gen.MoonSurfaceBuilderConfig;
 
