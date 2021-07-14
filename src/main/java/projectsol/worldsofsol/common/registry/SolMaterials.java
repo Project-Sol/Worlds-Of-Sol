@@ -1,11 +1,10 @@
 package projectsol.worldsofsol.common.registry;
 
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 
-public class MaterialRegistry {
+public class SolMaterials {
     public static final ToolMaterial FERROTITANIUM_TOOL = new ToolMaterial() {
         @Override
         public int getDurability() {
@@ -34,7 +33,7 @@ public class MaterialRegistry {
 
         @Override
         public Ingredient getRepairIngredient() {
-            return Ingredient.ofItems(ItemRegistry.ILMENITE_INGOT);
+            return Ingredient.ofItems(SolObjects.ILMENITE_INGOT);
         }
     };
 }

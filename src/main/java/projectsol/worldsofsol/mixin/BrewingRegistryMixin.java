@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import projectsol.worldsofsol.common.registry.ItemRegistry;
-import projectsol.worldsofsol.common.registry.StatusEffectRegistry;
+import projectsol.worldsofsol.common.registry.SolObjects;
+import projectsol.worldsofsol.common.registry.SolStatusEffects;
 
 @Mixin(BrewingRecipeRegistry.class)
 public abstract class BrewingRegistryMixin {
@@ -22,7 +22,7 @@ public abstract class BrewingRegistryMixin {
     @SuppressWarnings("unused")
     @Inject(method = "registerDefaults", at = @At("TAIL"))
     private static void invokeRegisterPotionRecipe(CallbackInfo callbackInfo) {
-        registerPotionRecipe(Potions.WATER_BREATHING, ItemRegistry.OXIFARIBACTE, StatusEffectRegistry.COSMIC_BREATHING_POTION);
-        registerPotionRecipe(StatusEffectRegistry.COSMIC_BREATHING_POTION, Items.REDSTONE, StatusEffectRegistry.COSMIC_BREATHING_POTION_LONG);
+        registerPotionRecipe(Potions.WATER_BREATHING, SolObjects.OXIFARIBACTE, SolStatusEffects.COSMIC_BREATHING_POTION);
+        registerPotionRecipe(SolStatusEffects.COSMIC_BREATHING_POTION, Items.REDSTONE, SolStatusEffects.COSMIC_BREATHING_POTION_LONG);
     }
 }

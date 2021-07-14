@@ -1,4 +1,4 @@
-package projectsol.worldsofsol.common.effect;
+package projectsol.worldsofsol.common.statuseffect;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectType;
