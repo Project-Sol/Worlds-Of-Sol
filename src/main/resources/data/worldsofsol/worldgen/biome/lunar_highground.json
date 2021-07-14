@@ -6,7 +6,14 @@
     "fog_color": 0,
     "water_color": 0,
     "water_fog_color": 0,
-    "music": {}
+    "music": {},
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop"
   },
   "surface_builder": "worldsofsol:moon_surface_builder",
   "carvers": {},

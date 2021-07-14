@@ -2,20 +2,21 @@
   "type": {
     "name": "minecraft:moon_type",
     "ultrawarm": false,
-    "natural": true,
-    "piglin_safe": false,
+    "natural": false,
+    "piglin_safe": true,
     "respawn_anchor_works": false,
     "bed_works": true,
-    "has_raids": true,
-    "has_skylight": true,
+    "has_raids": false,
+    "has_skylight": false,
     "has_ceiling": false,
     "coordinate_scale": 1,
-    "ambient_light": 0,
+    "ambient_light": 0.2,
     "logical_height": 256,
     "infiniburn": "minecraft:infiniburn_overworld",
     "min_y": 0,
     "height": 256,
-    "effects": "minecraft:the_end"
+    "fixed_time": 18000,
+    "effects": "minecraft:overworld"
   },
   "generator": {
     "type": "minecraft:noise",
@@ -75,15 +76,14 @@
       ]
     },
     "settings": {
-      "name": "minecraft:overworld",
       "bedrock_roof_position": -2147483648,
       "bedrock_floor_position": 0,
       "sea_level": 0,
       "min_surface_level": 0,
       "disable_mob_generation": false,
       "noise_caves_enabled": true,
-      "noodle_caves_enabled": false,
-      "aquifers_enabled": true,
+      "noodle_caves_enabled": true,
+      "aquifers_enabled": false,
       "deepslate_enabled": true,
       "ore_veins_enabled": false,
       "default_block": {
