@@ -38,11 +38,12 @@
   },
   "spawn_costs": {
   },
+  "parent": "worldsofsol:lunar_highlands",
   "player_spawn_friendly": true,
-  "precipitation": "rain",
+  "precipitation": "none",
   "temperature": 0.5,
   "downfall": 0.0,
-  "category": "plains",
+  "category": "none",
   "depth": 0.125,
   "scale": 0.125
 }
