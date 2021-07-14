@@ -1,11 +1,11 @@
 {
   "effects": {
     "sky_color": 0,
-    "foliage_color": 14483329,
-    "grass_color": 11665355,
-    "fog_color": 16777215,
-    "water_color": 5826047,
-    "water_fog_color": 5826047,
+    "foliage_color": 0,
+    "grass_color": 0,
+    "fog_color": 0,
+    "water_color": 0,
+    "water_fog_color": 0,
     "music": {}
   },
   "surface_builder": "worldsofsol:moon_surface_builder",
@@ -36,10 +36,10 @@
   "spawn_costs": {
   },
   "player_spawn_friendly": true,
-  "precipitation": "rain",
+  "precipitation": "none",
   "temperature": 0.5,
   "downfall": 0.0,
-  "category": "plains",
+  "category": "none",
   "depth": 0.125,
   "scale": 0.025
 }

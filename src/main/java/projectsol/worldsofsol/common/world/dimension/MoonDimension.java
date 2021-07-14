@@ -17,12 +17,15 @@ import projectsol.worldsofsol.common.world.gen.carver.CraterConfig;
 
 public class MoonDimension {
     public static RegistryKey<World> MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, WorldsOfSol.locate("moon"));
-
     private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
+    public static RegistryKey<Biome> LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, WorldsOfSol.locate("lunar_highlands"));
+    public static RegistryKey<Biome> COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, WorldsOfSol.locate("comet_tundra"));
 
     public static void init(){
         SurfaceBuilder<MoonSurfaceBuilderConfig> MOON_SURFACE_BUILDER = Registry.register(Registry.SURFACE_BUILDER, WorldsOfSol.locate("surface_builder"), new MoonSurfaceBuilder());
         MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
+        LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"lunar_highlands"));
+        COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"comet_tundra"));
         RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(
                 Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon")
         );
