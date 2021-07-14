@@ -21,7 +21,7 @@ public abstract class BrewingRegistryMixin {
 
     @SuppressWarnings("unused")
     @Inject(method = "registerDefaults", at = @At("TAIL"))
-    private static void invokeRegisterPotionRecipe(CallbackInfo callbackInfo) {
+    private static void registerPotion(CallbackInfo callbackInfo) {
         registerPotionRecipe(Potions.WATER_BREATHING, SolObjects.OXIFARIBACTE, SolStatusEffects.COSMIC_BREATHING_POTION);
         registerPotionRecipe(SolStatusEffects.COSMIC_BREATHING_POTION, Items.REDSTONE, SolStatusEffects.COSMIC_BREATHING_POTION_LONG);
     }
