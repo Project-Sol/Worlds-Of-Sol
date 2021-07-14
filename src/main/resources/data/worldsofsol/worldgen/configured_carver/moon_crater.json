@@ -24,7 +24,7 @@
         "Name": "minecraft:crimson_button"
       }
     },
-    "probability": 0.1,
+    "probability": 0.05,
     "y": {
       "min_inclusive": {
         "absolute": 0
