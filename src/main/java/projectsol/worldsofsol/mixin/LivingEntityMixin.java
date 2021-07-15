@@ -10,7 +10,9 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import projectsol.worldsofsol.common.registry.SolEntities;
 import projectsol.worldsofsol.common.registry.SolStatusEffects;
+import projectsol.worldsofsol.common.registry.SolTags;
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
 
 @Mixin(LivingEntity.class)
@@ -36,11 +38,14 @@ public abstract class LivingEntityMixin extends Entity {
         LivingEntity livingEntity = (LivingEntity) (Object) this;
         if(world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
             if(!livingEntity.hasStatusEffect(SolStatusEffects.COSMIC_BREATHING)){
-                this.setAir(airLastTick - 1);
-                if (this.getAir() == -20) {
-                    this.setAir(0);
-                    this.damage(DamageSource.DROWN, 2.0F);
+                if(!SolTags.SPACE_ENTITY.contains(livingEntity.getType())){
+                    this.setAir(airLastTick - 1);
+                    if (this.getAir() == -20) {
+                        this.setAir(0);
+                        this.damage(DamageSource.DROWN, 2.0F);
+                    }
                 }
+
             }
         }
     }

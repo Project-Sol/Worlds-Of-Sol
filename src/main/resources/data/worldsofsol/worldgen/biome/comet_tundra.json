@@ -37,7 +37,14 @@
   ],
   "starts": [],
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "worldsofsol:meteor_head",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 6
+      }
+    ],
     "creature": [],
     "water_creature": [],
     "water_ambient": [],
