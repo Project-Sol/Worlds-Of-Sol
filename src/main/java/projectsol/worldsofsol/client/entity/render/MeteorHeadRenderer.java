@@ -20,7 +20,7 @@ public class MeteorHeadRenderer extends MobEntityRenderer<MeteorHeadEntity, Mete
 
     @Override
     public void scale(MeteorHeadEntity meteorHeadEntity, MatrixStack matrixStack, float f) {
-        matrixStack.scale(1.2F, 1.2F, 1.2F);
+        matrixStack.scale(1F, 1F, 1F);
     }
 
     @Override
