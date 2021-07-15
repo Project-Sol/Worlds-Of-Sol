@@ -1,6 +1,13 @@
 package projectsol.worldsofsol;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.util.Identifier;
+import projectsol.worldsofsol.client.entity.model.MeteorHeadModel;
+import projectsol.worldsofsol.client.entity.render.MeteorHeadRenderer;
+import projectsol.worldsofsol.common.registry.SolEntities;
 
 public class WorldsOfSolClient implements ClientModInitializer {
     /*
@@ -10,9 +17,14 @@ public class WorldsOfSolClient implements ClientModInitializer {
     public static final Decorations DECORATIONS;
 
      */
+    public static final EntityModelLayer METEOR_HEAD_LAYER = new EntityModelLayer(new Identifier("worldsofsol:meteor_head_render_layer"), "meteor_head_render_layer");
 
     @Override
     public void onInitializeClient() {
+
+
+        EntityRendererRegistry.INSTANCE.register(SolEntities.METEOR_HEAD_ENTITY, MeteorHeadRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(METEOR_HEAD_LAYER, MeteorHeadModel::getTexturedModelData);
         /*
         Registry.register(SkyboxType.REGISTRY, TYPE.createId("test"), TYPE);
         SkyboxManager.getInstance().addPermanentSkybox(TestSkybox.INSTANCE);

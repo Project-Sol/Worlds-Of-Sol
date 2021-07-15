@@ -26,5 +26,6 @@ public class WorldsOfSol implements ModInitializer {
 		SolStatusEffects.init();
 		MoonDimension.init();
 		SolFeature.init();
+		SolEntities.init();
 	}
 }
