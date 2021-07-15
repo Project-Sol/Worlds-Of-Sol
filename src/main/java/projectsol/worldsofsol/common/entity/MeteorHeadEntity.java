@@ -1,9 +1,6 @@
 package projectsol.worldsofsol.common.entity;
 
-import net.minecraft.entity.EntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -45,6 +42,31 @@ public class MeteorHeadEntity extends SlimeEntity {
         this.goalSelector.add(8, new LookAroundGoal(this));
         this.targetSelector.add(3, new FollowTargetGoal<>(this, PlayerEntity.class, true));
     }
+    public void onPlayerCollision(PlayerEntity player) {
+        if (this.canAttack()) {
+            this.damage(player);
+        }
+
+    }
+    @Override
+    protected boolean canAttack() {
+        return this.canMoveVoluntarily();
+    }
+
+    @Override
+    protected float getDamageAmount() {
+        return super.getDamageAmount() + 2.0F;
+    }
+    @Override
+    protected void damage(LivingEntity target) {
+        super.damage(target);
+    }
+
+    @Override
+    public boolean isSmall() {
+        return true;
+    }
+
     @Nullable
     @Override
     public EntityData initialize(ServerWorldAccess serverWorldAccess, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityTag) {
