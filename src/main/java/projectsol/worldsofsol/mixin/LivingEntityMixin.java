@@ -4,12 +4,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import projectsol.worldsofsol.common.registry.SolEntities;
 import projectsol.worldsofsol.common.registry.SolStatusEffects;
 import projectsol.worldsofsol.common.registry.SolTags;
@@ -31,6 +35,38 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "tick", at = @At("HEAD"))
     public void tickHead(CallbackInfo info) {
         airLastTick = getAir();
+    }
+
+    @Inject(method = "tick", at = @At("HEAD"))
+    private void onTick(CallbackInfo info) {
+        if (!this.hasNoGravity()) {
+            if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
+                LivingEntity livingEntity = (LivingEntity) (Object) this;
+                if(livingEntity instanceof PlayerEntity){
+                    PlayerEntity player = (PlayerEntity) (Object) this;
+                    if (player.isSpectator() || player.isCreative()) {
+                        return;
+                    }
+                }
+                Vec3d vec3d = this.getVelocity();
+                double newY = vec3d.y;
+                double gravity = 0.06D;
+                if (!this.isOnGround() && !this.isTouchingWater()) {
+                    newY += gravity;
+                }
+                this.setVelocity(vec3d.x, newY, vec3d.z);
+            }
+
+        }
+    }
+    @Inject(method = {"computeFallDamage(FF)I"}, at = {@At("HEAD")}, cancellable = true)
+    private void onComputeFallDamage(float fallDistance, float damageMultiplier, CallbackInfoReturnable<Integer> info) {
+        if (!this.world.isClient()) {
+            if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY) {
+                double damage = 0.0D;
+                info.setReturnValue((int) damage);
+            }
+        }
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
