@@ -2,12 +2,7 @@ package projectsol.worldsofsol.client.entity.model;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.model.CompositeEntityModel;
-import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.render.entity.model.MagmaCubeEntityModel;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 import projectsol.worldsofsol.common.entity.MeteorHeadEntity;
 
