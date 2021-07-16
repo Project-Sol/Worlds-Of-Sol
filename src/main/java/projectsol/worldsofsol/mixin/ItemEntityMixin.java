@@ -29,7 +29,7 @@ public abstract class ItemEntityMixin extends Entity {
         if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY) {
             Vec3d vec3d = this.getVelocity();
             double newY = vec3d.y;
-            double gravity = 0.06D;
+            double gravity = 0.03D;
             if (!this.isOnGround() && !this.isTouchingWater()) {
                 newY += gravity;
             }
