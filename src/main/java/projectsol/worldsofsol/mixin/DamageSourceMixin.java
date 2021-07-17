@@ -34,8 +34,7 @@ public abstract class DamageSourceMixin {
         if(entity.world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY && entity.getRecentDamageSource() == DamageSource.DROWN){
             LivingEntity livingEntity = entity.getPrimeAdversary();
             String string = "worldsofsol.death.attack.suffocated";
-            String string2 = string + ".player";
-            cir.setReturnValue(livingEntity != null ? new TranslatableText(string2, entity.getDisplayName(), livingEntity.getDisplayName()) : new TranslatableText(string, entity.getDisplayName()));
+            cir.setReturnValue(new TranslatableText(string, entity.getDisplayName()));
         }
     }
 }
