@@ -5,17 +5,13 @@ import com.mojang.brigadier.tree.LiteralCommandNode;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 import projectsol.worldsofsol.common.registry.*;
 
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
@@ -42,8 +38,6 @@ public class WorldsOfSol implements ModInitializer {
 		MoonDimension.init();
 		SolFeature.init();
 		SolEntities.init();
-
-
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
 			LiteralCommandNode<ServerCommandSource> worldsofsolNode = CommandManager

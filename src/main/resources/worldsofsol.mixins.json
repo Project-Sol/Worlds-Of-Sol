@@ -6,7 +6,8 @@
   "mixins": [
     "BrewingRegistryMixin",
     "LivingEntityMixin",
-    "ItemEntityMixin"
+    "ItemEntityMixin",
+    "DamageSourceMixin"
   ],
   "client": [
     "WorldRendererMixin"

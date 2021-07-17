@@ -47,5 +47,7 @@
   "item.worldsofsol.exobone_sword": "Exobone Ilmenite",
 
   "effect.worldsofsol.cosmic_breathing":"Cosmic Breathing",
-  "effect.worldsofsol.radiation":"Space Sickness"
+  "effect.worldsofsol.radiation":"Space Sickness",
+
+  "worldsofsol.death.attack.suffocated": "%s suffocated in space"
 }
