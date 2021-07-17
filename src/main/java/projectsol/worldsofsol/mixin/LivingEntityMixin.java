@@ -49,7 +49,7 @@ public abstract class LivingEntityMixin extends Entity {
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 if(livingEntity instanceof PlayerEntity){
                     PlayerEntity player = (PlayerEntity) (Object) this;
-                    if (player.isSpectator() || player.getAbilities().flying) {
+                    if (player.isSpectator() || player.isCreative()) {
                         return;
                     }
                 }

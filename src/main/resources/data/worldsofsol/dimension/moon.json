@@ -100,9 +100,9 @@
         "Name": "worldsofsol:moon_rock"
       },
       "default_fluid": {
-        "Name": "minecraft:water",
+        "Name": "minecraft:lava",
         "Properties": {
-          "level": "0"
+          "level": "3"
         }
       },
       "noise": {
