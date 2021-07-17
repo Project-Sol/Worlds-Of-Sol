@@ -5,7 +5,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -43,7 +42,7 @@ public abstract class LivingEntityMixin extends Entity {
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 if(livingEntity instanceof PlayerEntity){
                     PlayerEntity player = (PlayerEntity) (Object) this;
-                    if (player.isSpectator() || player.isCreative()) {
+                    if (player.isSpectator() || player.getAbilities().flying) {
                         return;
                     }
                 }

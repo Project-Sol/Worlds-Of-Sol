@@ -64,6 +64,7 @@ public class MeteorHeadEntity extends SlimeEntity {
         return true;
     }
 
+
     @Nullable
     @Override
     public EntityData initialize(ServerWorldAccess serverWorldAccess, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityTag) {
