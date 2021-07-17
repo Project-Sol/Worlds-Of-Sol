@@ -4,7 +4,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,9 +15,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import projectsol.worldsofsol.common.registry.SolObjects;
 import projectsol.worldsofsol.common.registry.SolStatusEffects;
 import projectsol.worldsofsol.common.registry.SolTags;
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -31,12 +38,12 @@ public abstract class LivingEntityMixin extends Entity {
 
 
     @Inject(method = "tick", at = @At("HEAD"))
-    public void tickHead(CallbackInfo info) {
+    public void getAir(CallbackInfo info) {
         airLastTick = getAir();
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
-    private void onTick(CallbackInfo info) {
+    private void gravity(CallbackInfo info) {
         if (!this.hasNoGravity()) {
             if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
@@ -58,7 +65,7 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
     @Inject(method = {"computeFallDamage(FF)I"}, at = {@At("HEAD")}, cancellable = true)
-    private void onComputeFallDamage(float fallDistance, float damageMultiplier, CallbackInfoReturnable<Integer> info) {
+    private void noFallDamage(float fallDistance, float damageMultiplier, CallbackInfoReturnable<Integer> info) {
         if (!this.world.isClient()) {
             if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY) {
                 double damage = 0.0D;
@@ -68,7 +75,7 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
-    public void tickTail(CallbackInfo info) {
+    public void spaceTick(CallbackInfo info) {
         LivingEntity livingEntity = (LivingEntity) (Object) this;
         if(world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
             if(!livingEntity.hasStatusEffect(SolStatusEffects.COSMIC_BREATHING)){
@@ -78,6 +85,17 @@ public abstract class LivingEntityMixin extends Entity {
                         this.setAir(0);
                         this.damage(DamageSource.DROWN, 2.0F);
                     }
+                }
+
+            }
+            if(livingEntity instanceof PlayerEntity player){
+                List<Item> equipmentList = new ArrayList<>();
+                player.getItemsEquipped().forEach((x) -> equipmentList.add(x.getItem()));
+                List<Item> armorList = equipmentList.subList(2, 6);
+                boolean isWearingAll = armorList.containsAll(Arrays.asList(SolObjects.EXOBONE_BOOTS,
+                        SolObjects.EXOBONE_LEGGINGS, SolObjects.EXOBONE_CHESTPLATE, SolObjects.EXOBONE_HELMET));
+                if(!isWearingAll){
+                    player.addStatusEffect(new StatusEffectInstance(SolStatusEffects.RADIATION));
                 }
 
             }
