@@ -2,11 +2,14 @@ package projectsol.worldsofsol.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -47,9 +50,8 @@ public abstract class LivingEntityMixin extends Entity {
         if (!this.hasNoGravity()) {
             if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
-                if(livingEntity instanceof PlayerEntity){
-                    PlayerEntity player = (PlayerEntity) (Object) this;
-                    if (player.isSpectator() || player.getAbilities().flying) {
+                if(livingEntity instanceof PlayerEntity player){
+                    if (player.isSpectator() || player.isCreative()) {
                         return;
                     }
                 }
@@ -86,18 +88,18 @@ public abstract class LivingEntityMixin extends Entity {
                         this.damage(DamageSource.DROWN, 2.0F);
                     }
                 }
-
             }
             if(livingEntity instanceof PlayerEntity player){
                 List<Item> equipmentList = new ArrayList<>();
                 player.getItemsEquipped().forEach((x) -> equipmentList.add(x.getItem()));
                 List<Item> armorList = equipmentList.subList(2, 6);
-                boolean isWearingAll = armorList.containsAll(Arrays.asList(SolObjects.EXOBONE_BOOTS,
-                        SolObjects.EXOBONE_LEGGINGS, SolObjects.EXOBONE_CHESTPLATE, SolObjects.EXOBONE_HELMET));
-                if(!isWearingAll){
+                if(SolTags.RAD_SUITE.contains(armorList.get(0)) &&
+                   SolTags.RAD_SUITE.contains(armorList.get(1)) &&
+                   SolTags.RAD_SUITE.contains(armorList.get(2)) &&
+                   SolTags.RAD_SUITE.contains(armorList.get(3))){
+                }else{
                     player.addStatusEffect(new StatusEffectInstance(SolStatusEffects.RADIATION));
                 }
-
             }
         }
     }
