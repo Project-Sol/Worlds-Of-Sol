@@ -1,0 +1,90 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "feature": {
+          "config": {
+            "feature_false": {
+              "config": {
+                "can_replace": false,
+                "project": true,
+                "need_water": false,
+                "xspread": 4,
+                "yspread": 4,
+                "zspread": 4,
+                "whitelist": [
+                  {
+                    "Name": "minecraft:obsidian"
+                  },
+                  {
+                    "Name": "minecraft:obsidian"
+                  },
+                  {
+                    "Name": "minecraft:obsidian",
+                    "Properties": {
+                      "axis": "y"
+                    }
+                  }
+                ],
+                "blacklist": [],
+                "tries": 10,
+                "state_provider": {
+                  "state": {
+                    "Name": "minecraft:obsidian",
+                    "Properties": {
+                      "axis": "y"
+                    }
+                  },
+                  "type": "minecraft:simple_state_provider"
+                },
+                "block_placer": {
+                  "type": "minecraft:simple_block_placer"
+                }
+              },
+              "type": "minecraft:random_patch"
+            },
+            "feature_true": {
+              "config": {
+                "target": {
+                  "Name": "worldsofsol:moon_rock"
+                },
+                "state": {
+                  "Name": "minecraft:obsidian"
+                },
+                "radius": {
+                  "type": "minecraft:uniform",
+                  "value": {
+                    "min_inclusive": 2,
+                    "max_inclusive": 3
+                  }
+                }
+              },
+              "type": "minecraft:netherrack_replace_blobs"
+            }
+          },
+          "type": "minecraft:random_boolean_selector"
+        },
+        "decorator": {
+          "config": {
+            "count": 1
+          },
+          "type": "minecraft:count"
+        }
+      },
+      "type": "minecraft:decorated"
+    },
+    "decorator": {
+      "config": {
+        "count": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 1,
+            "max_inclusive": 3
+          }
+        }
+      },
+      "type": "minecraft:count_multilayer"
+    }
+  },
+  "type": "minecraft:decorated"
+}
