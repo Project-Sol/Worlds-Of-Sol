@@ -28,7 +28,9 @@
       "worldsofsol:ilmenite_ore",
       "worldsofsol:olivine_ore"
     ],
-    [],
+    [
+      "minecraft:basalt_replace_blobs"
+    ],
     [],
     []
   ],

@@ -16,10 +16,7 @@ import net.minecraft.world.gen.decorator.ConfiguredDecorator;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.HeightmapDecoratorConfig;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.DiskFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.registry.SolObjects;
@@ -35,7 +32,8 @@ public class SolFeature {
             .spreadHorizontally()
             .repeat(2); // Number of veins per chunk
 
-    private static ConfiguredFeature<?, ?> MOON_BASALT_DISK = Feature.DISK.configure(new DiskFeatureConfig(Blocks.BASALT.getDefaultState(), UniformIntProvider.create(2, 5), 2, ImmutableList.of(SolObjects.LUNAR_REGOLITH.getDefaultState(), SolObjects.MOON_ROCK.getDefaultState()))).decorate((ConfiguredDecorator) Decorator.HEIGHTMAP.configure(new HeightmapDecoratorConfig(Heightmap.Type.WORLD_SURFACE)).spreadHorizontally());
+
+    private static final Feature<ReplaceBlobsFeatureConfig> BASALT_REPLACE_BLOBS = new ReplaceBlobsFeature(ReplaceBlobsFeatureConfig.CODEC);
 
     public static void init(){
         RegistryKey<ConfiguredFeature<?, ?>> oreOxifaribacteOverworldOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
@@ -43,8 +41,6 @@ public class SolFeature {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreOxifaribacteOverworldOverworld.getValue(), ORE_OXIFARIBACTE_OVERWORLD);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreOxifaribacteOverworldOverworld);
 
-        RegistryKey<ConfiguredFeature<?, ?>> moonBasaltDisk = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-                new Identifier("worldsofsol", "moon_basalt_disk"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, moonBasaltDisk.getValue(), MOON_BASALT_DISK);
+        Registry.register(Registry.FEATURE, new Identifier("minecraft", "basalt_replace_blobs"), BASALT_REPLACE_BLOBS);
     }
 }
