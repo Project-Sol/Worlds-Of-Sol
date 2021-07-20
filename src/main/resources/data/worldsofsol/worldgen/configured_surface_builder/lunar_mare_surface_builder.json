@@ -1,0 +1,21 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "worldsodsol:moon_rock",
+      "Properties": {
+        "snowy": "false"
+      }
+    },
+    "under_material": {
+      "Name": "worldsofsol:moon_rock",
+      "Properties": {
+      }
+    },
+    "underwater_material": {
+      "Name": "worldsodsol:moon_rock",
+      "Properties": {
+      }
+    }
+  },
+  "type": "worldsofsol:surface_builder"
+}

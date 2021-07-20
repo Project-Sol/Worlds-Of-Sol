@@ -15,7 +15,7 @@
     },
     "ambient_sound": "minecraft:ambient.nether_wastes.loop"
   },
-  "surface_builder": "worldsofsol:moon_surface_builder",
+  "surface_builder": "worldsofsol:lunar_mare_surface_builder",
   "carvers": {},
   "features": [
     [],
@@ -35,7 +35,10 @@
       "worldsofsol:ilmenite_ore",
       "worldsofsol:olivine_ore"
     ],
-    [],
+    [
+      "minecraft:basalt_replace_blobs",
+      "minecraft:obsidian_blobs"
+    ],
     [],
     []
   ],
