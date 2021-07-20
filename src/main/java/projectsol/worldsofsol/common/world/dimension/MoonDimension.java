@@ -15,7 +15,7 @@ import projectsol.worldsofsol.common.world.gen.carver.CraterConfig;
 
 
 public class MoonDimension {
-    public static RegistryKey<World> MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, WorldsOfSol.locate("moon"));
+    public static RegistryKey<World> MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
     private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
 
     //biomes

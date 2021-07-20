@@ -41,12 +41,7 @@ public class MoonSurfaceBuilder extends SurfaceBuilder<MoonSurfaceBuilderConfig>
                         }
 
                         if (m < seaLevel && (topState == null || topState.isAir())) {
-                            if (biome.getTemperature(mut.set(x, m, z)) < 0.15F) {
-                                topState = Blocks.ICE.getDefaultState();
-                            } else {
-                                topState = defaultFluid;
-                            }
-
+                            topState = defaultFluid;
                             mut.set(cX, m, cZ);
                         }
 

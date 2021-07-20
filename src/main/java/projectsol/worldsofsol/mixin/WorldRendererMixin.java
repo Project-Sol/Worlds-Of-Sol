@@ -1,49 +1,117 @@
 package projectsol.worldsofsol.mixin;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.*;
+import net.minecraft.client.texture.TextureManager;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Matrix4f;
-import net.minecraft.world.gen.ChunkRandom;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import net.minecraft.util.math.Vec3f;
+import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import projectsol.worldsofsol.client.OctaveSimplexNoise;
+import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
+import projectsol.worldsofsol.WorldsOfSol;
+import projectsol.worldsofsol.client.SpaceSkybox;
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
 
-import java.util.Random;
 
+@Environment(EnvType.CLIENT)
 @Mixin(WorldRenderer.class)
 public abstract class WorldRendererMixin {
-
-
-    @Shadow protected abstract void renderStars();
+    private static final Identifier EARTH_PHASES = WorldsOfSol.locate("textures/enviroment/earth_phases.png");
 
     @Shadow private ClientWorld world;
+    @Mutable
+    @Shadow @Final private static Identifier MOON_PHASES;
+    private TextureManager textureManager;
 
     @Shadow
-    public void renderClouds(MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g) {
+    public void renderClouds(MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g) {}
 
+    protected void renderCosmicBackground(MatrixStack matrices, float opacity) {
+        try {
+            //RenderSystem.enableBlend();
+            RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
+            Tessellator tessellator = Tessellator.getInstance();
+            BufferBuilder bufferBuilder = tessellator.getBuffer();
+
+            for (int i = 0; i < 6; ++i) {
+                matrices.push();
+                if (i == 0) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.WEST);
+                    matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(90.0F));
+                }
+
+                if (i == 1) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.EAST);
+                    matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(-90.0F));
+                }
+
+                if (i == 2) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.UP);
+                    matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(180.0F));
+                }
+
+                if (i == 3) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.NORTH);
+                    matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(90.0F));
+                }
+
+                if (i == 4) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.SOUTH);
+                    matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(-90.0F));
+                }
+                if (i == 0) {
+                    RenderSystem.setShaderTexture(0, SpaceSkybox.DOWN);
+                }
+                Matrix4f matrix4f = matrices.peek().getModel();
+                bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
+                bufferBuilder.vertex(matrix4f, -150.0F, -150.0F, -150.0F).texture(0.0F, 0.0F).color(255, 255, 255, (int) (128 * opacity)).next();
+                bufferBuilder.vertex(matrix4f, -150.0F, -150.0F, 150.0F).texture(0.0F, 1.0F).color(255, 255, 255, (int) (128 * opacity)).next();
+                bufferBuilder.vertex(matrix4f, 150.0F, -150.0F, 150.0F).texture(1.0F, 1.0F).color(255, 255, 255, (int) (128 * opacity)).next();
+                bufferBuilder.vertex(matrix4f, 150.0F, -150.0F, -150.0F).texture(1.0F, 0.0F).color(255, 255, 255, (int) (128 * opacity)).next();
+                tessellator.draw();
+                matrices.pop();
+            }
+            RenderSystem.enableTexture();
+
+        } catch (NullPointerException e) {
+        e.printStackTrace();
+    }
+    }
+//
+    @SuppressWarnings("UnresolvedMixinReference")
+    @Inject(method = "renderSky", at = {@At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderTexture(ILnet/minecraft/util/Identifier;)V", ordinal = 1, shift = At.Shift.BEFORE, remap = false),
+    @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderTexture(ILnet/minecraft/class_2960;)V", ordinal = 1, shift = At.Shift.BEFORE, remap = false)}
+    )
+    private void renderOrbitalMoon(MatrixStack matrices, Matrix4f matrix4f, float f, Runnable runnable, CallbackInfo ci) {
+        if (world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY) {
+            MOON_PHASES = EARTH_PHASES;
+            RenderSystem.disableBlend();
+        }
     }
 
-
-    @Inject(method = "renderStars(Lnet/minecraft/client/render/BufferBuilder;)V", at = @At(value = "HEAD"), cancellable = true)
-    private void disableLightSky(BufferBuilder builder, CallbackInfo callbackInfo) {
-        this.renderStarsWithNoise(
-                builder,
-                5000,
-                0.15f,
-                0.1f,
-                10842L,
-                50,
-                0.5F
-            );
-        callbackInfo.cancel();
+    @Inject(method = "renderSky", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack$Entry;getModel()Lnet/minecraft/util/math/Matrix4f;", ordinal = 2, shift = At.Shift.AFTER))
+    private void renderStarfield(MatrixStack matrices, Matrix4f matrix4f, float f, Runnable runnable, CallbackInfo ci) {
+        if(world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
+            this.renderCosmicBackground(matrices, 1);
+        }
     }
+
+    @ModifyArgs(method = "renderSky", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/VertexConsumer;color(FFFF)Lnet/minecraft/client/render/VertexConsumer;"))
+    private void renderAtmos(Args args) {
+        if(world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
+            args.set(0, 0.0F);
+            args.set(1, 0.0F);
+            args.set(2, 0.0F);
+            args.set(3, 0.0F);
+        }
+    }
+
 
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V"))
     private void injected(WorldRenderer worldRenderer, MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g) {
@@ -52,97 +120,4 @@ public abstract class WorldRendererMixin {
         }
     }
 
-
-    @Unique
-    private void renderStarsWithNoise(
-            BufferBuilder buffer,
-            int starCount,
-            float baseSize,
-            float sizeModifier,
-            long seed,
-            int noisePercentage,
-            double noiseThreshold
-    ) {
-        Random random = new Random(10842L);
-        OctaveSimplexNoise fieldSampler = new OctaveSimplexNoise(new ChunkRandom(seed), 3);
-
-        // Cap noise threshold
-        if (noiseThreshold > 1.0)
-            noiseThreshold = 1.0;
-
-        // Make a portion of the stars noise-based,
-        // the rest, vanilla randomized.
-        int noiseStarCount = (int)Math.floor(starCount * noisePercentage / 100D);
-
-        double[] ipts = new double[starCount];
-        double[] jpts = new double[starCount];
-        double[] kpts = new double[starCount];
-
-        int stars = 0;
-        while (stars < noiseStarCount) {
-            double i = random.nextFloat() * 2.0f - 1.0f;
-            double j = random.nextFloat() * 2.0f - 1.0f;
-            double k = random.nextFloat() * 2.0f - 1.0f;
-
-            double weight = fieldSampler.sample(i, j, k);
-
-            if (weight + random.nextDouble() * 0.2 > noiseThreshold) {
-                ipts[stars] = i;
-                jpts[stars] = j;
-                kpts[stars] = k;
-
-                stars++;
-            }
-        }
-
-        while (stars < starCount) {
-            ipts[stars] = random.nextFloat() * 2.0f - 1.0f;
-            jpts[stars] = random.nextFloat() * 2.0f - 1.0f;
-            kpts[stars] = random.nextFloat() * 2.0f - 1.0f;
-
-            stars++;
-        }
-
-        buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
-
-        for (int i = 0; i < starCount; ++i) {
-            double double5 = ipts[i];
-            double double7 = jpts[i];
-            double double9 = kpts[i];
-
-            double double11 = baseSize + random.nextFloat() * sizeModifier;
-            double double13 = double5 * double5 + double7 * double7 + double9 * double9;
-            if (double13 < 1.0 && double13 > 0.01) {
-                double13 = 1.0 / Math.sqrt(double13);
-                double5 *= double13;
-                double7 *= double13;
-                double9 *= double13;
-                double double15 = double5 * 100.0;
-                double double17 = double7 * 100.0;
-                double double19 = double9 * 100.0;
-                double double21 = Math.atan2(double5, double9);
-                double double23 = Math.sin(double21);
-                double double25 = Math.cos(double21);
-                double double27 = Math.atan2(Math.sqrt(double5 * double5 + double9 * double9), double7);
-                double double29 = Math.sin(double27);
-                double double31 = Math.cos(double27);
-                double double33 = random.nextDouble() * 3.141592653589793 * 2.0;
-                double double35 = Math.sin(double33);
-                double double37 = Math.cos(double33);
-                for (int v = 0; v < 4; ++v) {
-                    double double42 = ((v & 0x2) - 1) * double11;
-                    double double44 = ((v + 1 & 0x2) - 1) * double11;
-                    double double48 = double42 * double37 - double44 * double35;
-                    double double52;
-                    double52 = double44 * double37 + double42 * double35;
-                    double double54 = double48 * double29 + 0.0 * double31;
-                    double double56 = 0.0 * double29 - double48 * double31;
-                    double double58 = double56 * double23 - double52 * double25;
-                    double double60 = double54;
-                    double double62 = double52 * double23 + double56 * double25;
-                    buffer.vertex(double15 + double58, double17 + double60, double19 + double62).next();
-                }
-            }
-        }
-    }
 }

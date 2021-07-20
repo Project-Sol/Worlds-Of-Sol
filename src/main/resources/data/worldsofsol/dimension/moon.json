@@ -10,13 +10,12 @@
     "has_skylight": false,
     "has_ceiling": false,
     "coordinate_scale": 1,
-    "ambient_light": 0.5,
-    "logical_height": 256,
+    "ambient_light": 0.025,
+    "logical_height": 384,
     "infiniburn": "minecraft:infiniburn_overworld",
-    "min_y": 0,
-    "height": 256,
-    "fixed_time": 18000,
-    "effects": "minecraft:overworld"
+    "min_y": -64,
+    "height": 384,
+    "effects": "worldsofsol:moon"
   },
   "generator": {
     "type": "minecraft:noise",
@@ -88,13 +87,13 @@
     "settings": {
       "bedrock_roof_position": -2147483648,
       "bedrock_floor_position": 0,
-      "sea_level": 0,
-      "min_surface_level": 0,
+      "sea_level": -50,
+      "min_surface_level": 50,
       "disable_mob_generation": false,
       "noise_caves_enabled": true,
       "noodle_caves_enabled": true,
       "aquifers_enabled": false,
-      "deepslate_enabled": true,
+      "deepslate_enabled": false,
       "ore_veins_enabled": false,
       "default_block": {
         "Name": "worldsofsol:moon_rock"
@@ -102,12 +101,12 @@
       "default_fluid": {
         "Name": "minecraft:lava",
         "Properties": {
-          "level": "3"
+          "level": "0"
         }
       },
       "noise": {
-        "min_y": 0,
-        "height": 256,
+        "min_y": -64,
+        "height": 384,
         "density_factor": 1,
         "density_offset": -0.46875,
         "size_horizontal": 1,
