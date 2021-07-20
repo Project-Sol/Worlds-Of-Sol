@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.decoration.painting.PaintingMotive;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -89,6 +90,7 @@ public class SolObjects {
     public static final ToolItem FERROTITANIUM_HOE = create("ferrotitanium_hoe", new SolHoe(SolMaterials.FERROTITANIUM_TOOL,-2,-1, gen()));
 
 
+
     private static Item.Settings gen() {
         return new Item.Settings().group(WorldsOfSol.WORLDS_OF_SOL_GROUP);
     }
@@ -104,11 +106,18 @@ public class SolObjects {
         }
         return block;
     }
+    //Painting
+    private static PaintingMotive create(String id, int width, int height) {
+        final PaintingMotive type = new PaintingMotive(width, height);
+        Registry.register(Registry.PAINTING_MOTIVE, new Identifier(WorldsOfSol.MODID, id), type);
+        return type;
+    }
 
 
     public static void init() {
         BLOCKS.keySet().forEach(block -> Registry.register(Registry.BLOCK, BLOCKS.get(block), block));
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
-
+        //Paintings
+        create("black_hole", 16, 16);
     }
 }
