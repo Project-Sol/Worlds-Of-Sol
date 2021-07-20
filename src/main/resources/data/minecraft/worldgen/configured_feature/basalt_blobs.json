@@ -9,9 +9,9 @@
                 "can_replace": false,
                 "project": true,
                 "need_water": false,
-                "xspread": 4,
+                "xspread": 8,
                 "yspread": 12,
-                "zspread": 4,
+                "zspread": 8,
                 "whitelist": [
                   {
                     "Name": "minecraft:blackstone"
@@ -46,7 +46,7 @@
             "feature_true": {
               "config": {
                 "target": {
-                  "Name": "worldsofsol:lunar_regolith"
+                  "Name": "worldsofsol:moon_rock"
                 },
                 "state": {
                   "Name": "minecraft:smooth_basalt"

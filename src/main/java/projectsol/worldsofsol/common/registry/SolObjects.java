@@ -11,7 +11,7 @@ import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.armor.ExoboneArmor;
 import projectsol.worldsofsol.common.block.CustomStairsBlock;
-import projectsol.worldsofsol.common.item.BasicSwordItem;
+import projectsol.worldsofsol.common.tools.SolSword;
 import projectsol.worldsofsol.common.tools.SolAxe;
 import projectsol.worldsofsol.common.tools.SolHoe;
 import projectsol.worldsofsol.common.tools.SolPickaxe;
@@ -81,7 +81,7 @@ public class SolObjects {
     public static final Item OXIFARIBACTE = create("oxifaribacte", new Item(gen()));
 
     //Tools
-    public static final Item EXOBONE_SWORD = create("exobone_sword", new BasicSwordItem(ToolMaterials.STONE, 2, -2.4F, gen()));
+    public static final Item EXOBONE_SWORD = create("exobone_sword", new SolSword(ToolMaterials.STONE, 2, -2.4F, gen()));
 
     public static final ToolItem FERROTITANIUM_SWORD = create("ferrotitanium_sword", new SwordItem(SolMaterials.FERROTITANIUM_TOOL,3,-2.4F, gen()));
     public static final ToolItem FERROTITANIUM_PICKAXE = create("ferrotitanium_pickaxe", new SolPickaxe(SolMaterials.FERROTITANIUM_TOOL,1,-2.8F, gen()));
