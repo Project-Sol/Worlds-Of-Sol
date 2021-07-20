@@ -74,14 +74,16 @@ public class MeteorHeadEntity extends SlimeEntity {
         super.setSize(size, heal);
         this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR).setBaseValue((double)(size * 6));
     }
-
+/*
     public static boolean canSpawn(EntityType<MeteorHeadEntity> type, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
         Optional<RegistryKey<Biome>> optional = world.getBiomeKey(pos);
         boolean bl = (world.getDifficulty() != Difficulty.PEACEFUL && world.getLightLevel(LightType.BLOCK, pos) < 10 && canMobSpawn(type, world, spawnReason, pos, random))
                 || spawnReason == SpawnReason.SPAWNER;
         if (Objects.equals(optional, Optional.of(MoonDimension.COMET_TUNDRA))) {
             return bl;
-        } else
+        }else{
             return false;
+       }
     }
+ */
 }

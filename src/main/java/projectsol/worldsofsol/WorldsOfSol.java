@@ -25,10 +25,6 @@ public class WorldsOfSol implements ModInitializer {
 
 	public static final String MODID = "worldsofsol";
 	public static final ItemGroup WORLDS_OF_SOL_GROUP = FabricItemGroupBuilder.build(new Identifier(WorldsOfSol.MODID, WorldsOfSol.MODID), () -> new ItemStack(SolObjects.COBBLED_MOON_ROCK));
-	public static Identifier locate(String location) {
-		return new Identifier(MODID, location);
-	}
-
 
 
 	@Override
@@ -50,8 +46,5 @@ public class WorldsOfSol implements ModInitializer {
 			worldsofsolNode.addChild(moonNode);
 
 		});
-
-
-
 	}
 }

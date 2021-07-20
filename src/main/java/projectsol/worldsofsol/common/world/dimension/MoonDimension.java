@@ -19,18 +19,18 @@ public class MoonDimension {
     private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
 
     //biomes
-    public static RegistryKey<Biome> LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, WorldsOfSol.locate("lunar_highlands"));
-    public static RegistryKey<Biome> COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, WorldsOfSol.locate("comet_tundra"));
-    public static RegistryKey<Biome> LUNAR_MARE = RegistryKey.of(Registry.BIOME_KEY, WorldsOfSol.locate("lunar_mare"));
+    //public static RegistryKey<Biome> LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID, "lunar_highlands"));
+    //public static RegistryKey<Biome> COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"comet_tundra"));
+    //public static RegistryKey<Biome> LUNAR_MARE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"lunar_mare"));
 
     public static void init(){
-        SurfaceBuilder<MoonSurfaceBuilderConfig> MOON_SURFACE_BUILDER = Registry.register(Registry.SURFACE_BUILDER, WorldsOfSol.locate("surface_builder"), new MoonSurfaceBuilder());
+        SurfaceBuilder<MoonSurfaceBuilderConfig> MOON_SURFACE_BUILDER = Registry.register(Registry.SURFACE_BUILDER, new Identifier(WorldsOfSol.MODID,"surface_builder"), new MoonSurfaceBuilder());
         MOON_WORLD_KEY = RegistryKey.of(Registry.WORLD_KEY, new Identifier(WorldsOfSol.MODID, "moon"));
 
         // biomes
-        LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"lunar_highlands"));
-        COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"comet_tundra"));
-        LUNAR_MARE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID, "lunar_mare"));
+        //LUNAR_HIGHLANDS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"lunar_highlands"));
+        //COMET_TUNDRA = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID,"comet_tundra"));
+        //LUNAR_MARE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(WorldsOfSol.MODID, "lunar_mare"));
 
         RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(
                 Registry.DIMENSION_KEY, new Identifier(WorldsOfSol.MODID, "moon")

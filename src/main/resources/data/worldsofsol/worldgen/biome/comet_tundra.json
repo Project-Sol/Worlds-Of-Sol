@@ -40,7 +40,7 @@
     "monster": [
       {
         "type": "worldsofsol:meteor_head",
-        "weight": 100,
+        "weight": 50,
         "minCount": 2,
         "maxCount": 6
       }

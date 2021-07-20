@@ -22,7 +22,7 @@ import projectsol.worldsofsol.common.world.dimension.MoonDimension;
 @Environment(EnvType.CLIENT)
 @Mixin(WorldRenderer.class)
 public abstract class WorldRendererMixin {
-    private static final Identifier EARTH_PHASES = WorldsOfSol.locate("textures/enviroment/earth_phases.png");
+    private static final Identifier EARTH_PHASES = new Identifier(WorldsOfSol.MODID,"textures/enviroment/earth_phases.png");
 
     @Shadow private ClientWorld world;
     @Mutable
