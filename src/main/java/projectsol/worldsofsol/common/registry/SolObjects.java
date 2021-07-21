@@ -6,10 +6,12 @@ import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.decoration.painting.PaintingMotive;
 import net.minecraft.item.*;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.armor.ExoboneArmor;
+import projectsol.worldsofsol.common.block.CocoonBlock;
 import projectsol.worldsofsol.common.block.CustomStairsBlock;
 import projectsol.worldsofsol.common.tools.SolSword;
 import projectsol.worldsofsol.common.tools.SolAxe;
@@ -44,7 +46,8 @@ public class SolObjects {
     public static final Block COBBLED_MOON_ROCK_WALL = create("cobbled_moon_rock_wall", new WallBlock(copyOf(SolObjects.COBBLED_MOON_ROCK)), true);
     public static final Block MOON_BRICK_WALL = create("moon_brick_wall", new WallBlock(copyOf(SolObjects.MOON_BRICKS)), true);
 
-
+    // Special Blocks
+    public static final Block COCOON_BLOCK = create("cocoon", new CocoonBlock(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.WOOL).strength(1.0F, 0.5F)), true);
 
     //Ores
     public static final Block ILMENITE_ORE = create("ilmenite_ore", new Block(FabricBlockSettings.of(Material.STONE)
