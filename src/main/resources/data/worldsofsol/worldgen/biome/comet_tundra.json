@@ -31,7 +31,10 @@
       "worldsofsol:ilmenite_ore",
       "worldsofsol:olivine_ore"
     ],
-    [],
+    [
+      "worldsofsol:blue_ice_blobs",
+      "worldsofsol:packed_ice_blobs"
+    ],
     [],
     []
   ],

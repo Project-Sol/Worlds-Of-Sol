@@ -46,6 +46,9 @@ public class SolObjects {
     public static final Block COBBLED_MOON_ROCK_WALL = create("cobbled_moon_rock_wall", new WallBlock(copyOf(SolObjects.COBBLED_MOON_ROCK)), true);
     public static final Block MOON_BRICK_WALL = create("moon_brick_wall", new WallBlock(copyOf(SolObjects.MOON_BRICKS)), true);
 
+    public static final Block METEORITE = create("meteorite", new Block(copyOf(Blocks.IRON_BLOCK)), true);
+    public static final Block ALIEN_GOO = create("alien_goo", new Block(copyOf(Blocks.MAGMA_BLOCK)), true);
+
     // Special Blocks
     public static final Block COCOON_BLOCK = create("cocoon", new CocoonBlock(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.WOOL).strength(1.0F, 0.5F)), true);
 
@@ -64,7 +67,6 @@ public class SolObjects {
     public static final Block FERROTITANIUM_BLOCK = create("ferrotitanium_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OLIVINE_BLOCK = create("olivine_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block OXIFARIBACTE_BLOCK = create("oxifaribacte_block", new Block(copyOf(Blocks.IRON_BLOCK)), true);
-    public static final Block METEORITE = create("meteorite", new Block(copyOf(Blocks.IRON_BLOCK)), true);
 
     //Armor
     public static final ArmorMaterial EXOBONE_ARMOR_MATERIAL = new ExoboneArmor();

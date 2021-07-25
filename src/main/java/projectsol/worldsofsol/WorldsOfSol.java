@@ -16,6 +16,7 @@ import projectsol.worldsofsol.common.registry.*;
 
 import projectsol.worldsofsol.common.world.dimension.MoonDimension;
 import projectsol.worldsofsol.common.world.gen.feature.SolFeature;
+import projectsol.worldsofsol.common.world.structures.SolStructures;
 
 import static net.minecraft.server.command.CommandManager.argument;
 import static projectsol.worldsofsol.common.registry.SolCommands.moon;
@@ -34,6 +35,7 @@ public class WorldsOfSol implements ModInitializer {
 		MoonDimension.init();
 		SolFeature.init();
 		SolEntities.init();
+		SolStructures.init();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
 			LiteralCommandNode<ServerCommandSource> worldsofsolNode = CommandManager

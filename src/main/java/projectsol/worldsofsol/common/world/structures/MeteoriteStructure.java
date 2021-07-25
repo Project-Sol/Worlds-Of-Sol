@@ -64,8 +64,8 @@ public class MeteoriteStructure extends StructureFeature<DefaultFeatureConfig> {
         @Override
         public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, ChunkPos pos, Biome biome, DefaultFeatureConfig config, HeightLimitView world) {
 
-            int x = pos.x * 16;
-            int z = pos.z * 16;
+            int x = (pos.x << 4) + 7;
+            int z = (pos.z << 4) + 7;
 
             BlockPos blockpos = new BlockPos(x, (chunkGenerator.getHeight((pos.x*16), (pos.z*16), Heightmap.Type.WORLD_SURFACE, world)), z);
 
@@ -73,7 +73,7 @@ public class MeteoriteStructure extends StructureFeature<DefaultFeatureConfig> {
                     registryManager,
                     new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(new Identifier(WorldsOfSol.MODID, "meteorite/start_pool")), 10), PoolStructurePiece::new, chunkGenerator, manager, blockpos, (this), this.random, false, false, world);
 
-            this.children.forEach(piece -> piece.translate(0, -1, 0));
+            this.children.forEach(piece -> piece.translate(0, 1, 0));
             this.children.forEach(piece -> piece.getBoundingBox().getMinY());
 
             this.setBoundingBoxFromChildren();
