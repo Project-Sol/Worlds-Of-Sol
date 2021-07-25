@@ -1,0 +1,12 @@
+{
+  "map": [
+    {
+      "predicate": {
+        "materialPredicate": {
+          "texture": "worldsofsol:textures/block/goo_block.png"
+        }
+      },
+      "material": "canvas:emissive_transform"
+    }
+  ]
+}
