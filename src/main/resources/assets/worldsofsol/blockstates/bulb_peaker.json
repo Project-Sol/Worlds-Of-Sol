@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "worldsofsol:block/bulb_peaker" },
+    "facing=east":  { "model": "worldsofsol:block/bulb_peaker", "y":  90},
+    "facing=south": { "model": "worldsofsol:block/bulb_peaker", "y": 180 },
+    "facing=west":  { "model": "worldsofsol:block/bulb_peaker", "y": 270 }
+  }
+}

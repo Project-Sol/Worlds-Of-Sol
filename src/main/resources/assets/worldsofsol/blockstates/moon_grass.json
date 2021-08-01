@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "worldsofsol:block/moon_grass"
+      },
+      {
+        "model": "worldsofsol:block/moon_grass",
+        "y": 90
+      },
+      {
+        "model": "worldsofsol:block/moon_grass",
+        "y": 180
+      },
+      {
+        "model": "worldsofsol:block/moon_grass",
+        "y": 270
+      }
+    ]
+  }
+}

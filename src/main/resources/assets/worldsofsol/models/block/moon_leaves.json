@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "worldsofsol:block/moon_leaves"
+  }
+}

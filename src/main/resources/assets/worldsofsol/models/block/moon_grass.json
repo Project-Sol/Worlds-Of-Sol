@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "worldsofsol:block/moon_grass_top",
+    "bottom": "worldsofsol:block/lunar_regolith",
+    "side": "worldsofsol:block/moon_grass_side"
+  }
+}

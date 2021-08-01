@@ -8,12 +8,11 @@ import net.minecraft.entity.decoration.painting.PaintingMotive;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.armor.ExoboneArmor;
-import projectsol.worldsofsol.common.block.CocoonBlock;
-import projectsol.worldsofsol.common.block.CustomStairsBlock;
-import projectsol.worldsofsol.common.block.SpaceFernBlock;
+import projectsol.worldsofsol.common.block.*;
 import projectsol.worldsofsol.common.tools.SolSword;
 import projectsol.worldsofsol.common.tools.SolAxe;
 import projectsol.worldsofsol.common.tools.SolHoe;
@@ -57,15 +56,19 @@ public class SolObjects {
     public static final Block COMET_STONE_WALL = create("comet_stone_wall", new WallBlock(copyOf(SolObjects.COMET_STONE)), true);
     public static final Block SMOOTH_COMET_STONE_WALL = create("smooth_comet_stone_wall", new WallBlock(copyOf(SolObjects.SMOOTH_COMET_STONE)), true);
 
+    public static final Block MOON_LEAVES = create("moon_leaves", new SolTransparentBlock(AbstractBlock.Settings.of(Material.LEAVES, MapColor.WHITE).strength(0.2F).sounds(BlockSoundGroup.AZALEA_LEAVES).nonOpaque().emissiveLighting((state, world, pos) -> true).postProcess((state, world, pos) -> true).emissiveLighting((state, world, pos) -> true)), true);
+    public static final Block MOON_GRASS = create("moon_grass", new GrassBlock(copyOf(Blocks.GRASS_BLOCK)), true);
 
+    public static final Block MOON_LOG = create("moon_log", create(MapColor.GREEN, MapColor.OAK_TAN), true);
+    public static final Block STRIPPED_MOON_LOG = create("stripped_moon_log", create(MapColor.GREEN, MapColor.OAK_TAN), true);
 
 
     public static final Block ALIEN_GOO = create("goo_block", new Block(FabricBlockSettings.of(Material.STONE).strength(2.5F, 4.0F).breakByTool(FabricToolTags.PICKAXES, 0)), true);
 
     public static final Block METEORITE = create("meteorite", new Block(copyOf(Blocks.IRON_BLOCK)), true);
-    public static final Block ALIEN_GOO = create("alien_goo", new Block(copyOf(Blocks.MAGMA_BLOCK)), true);
 
     public static final Block VULCAN_ROOTS = create("vulcan_roots", new SpaceFernBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)), true);
+    public static final Block BULB_PEAKER = create("bulb_peaker", new BulbPeakerBlock(copyOf(Blocks.GRASS)), true);
 
     // Special Blocks
     public static final Block COCOON_BLOCK = create("cocoon", new CocoonBlock(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.WOOL).strength(1.0F, 0.5F)), true);
@@ -134,6 +137,10 @@ public class SolObjects {
         final PaintingMotive type = new PaintingMotive(width, height);
         Registry.register(Registry.PAINTING_MOTIVE, new Identifier(WorldsOfSol.MODID, id), type);
         return type;
+    }
+
+    private static SolPillarBlock create(MapColor topMaterialColor, MapColor sideMaterialColor) {
+        return new SolPillarBlock(AbstractBlock.Settings.of(Material.WOOD, (blockState) -> blockState.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMaterialColor : sideMaterialColor).strength(2.0f).sounds(BlockSoundGroup.WOOD));
     }
 
 

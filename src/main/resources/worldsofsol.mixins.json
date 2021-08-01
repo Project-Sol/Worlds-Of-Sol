@@ -7,7 +7,8 @@
     "BrewingRegistryMixin",
     "LivingEntityMixin",
     "ItemEntityMixin",
-    "DamageSourceMixin"
+    "DamageSourceMixin",
+    "AxeItemMixin"
   ],
   "client": [
     "WorldRendererMixin",

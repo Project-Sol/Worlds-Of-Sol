@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "worldsofsol:block/stripped_moon_log_top",
+    "side": "worldsofsol:block/stripped_moon_log"
+  }
+}

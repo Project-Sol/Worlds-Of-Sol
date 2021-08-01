@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "worldsofsol:block/moon_log_top",
+    "side": "worldsofsol:block/moon_log"
+  }
+}
