@@ -28,7 +28,9 @@ dependencies {
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
 	modRuntime "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
-//	modImplementation "curse.maven:canvas-renderer-318440:3390049"
+	//modImplementation "curse.maven:canvas-renderer-318440:3389044"
+	//modImplementation 'com.github.grondag:canvas:1.0.1816-unstable'
+
 }
 
 processResources {

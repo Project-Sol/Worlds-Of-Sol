@@ -33,18 +33,32 @@ public class SolObjects {
     public static final Block MOON_ROCK = create("moon_rock", new Block(FabricBlockSettings.of(Material.STONE).strength(2.5F, 4.0F).breakByTool(FabricToolTags.PICKAXES, 0)), true);
     public static final Block COBBLED_MOON_ROCK = create("cobbled_moon_rock", new Block(copyOf(SolObjects.MOON_ROCK)), true);
     public static final Block MOON_BRICKS = create("moon_bricks", new Block(copyOf(SolObjects.MOON_ROCK)), true);
+    public static final Block COMET_STONE = create("comet_stone", new Block(copyOf(SolObjects.MOON_ROCK)), true);
+    public static final Block SMOOTH_COMET_STONE = create("smooth_comet_stone", new Block(copyOf(SolObjects.COMET_STONE)), true);
 
     public static final Block MOON_ROCK_STAIRS = create("moon_rock_stairs", new CustomStairsBlock(MOON_BRICKS.getDefaultState(), copyOf(SolObjects.MOON_ROCK)), true);
     public static final Block COBBLED_MOON_ROCK_STAIRS = create("cobbled_moon_rock_stairs", new CustomStairsBlock(MOON_BRICKS.getDefaultState(), copyOf(SolObjects.COBBLED_MOON_ROCK)), true);
     public static final Block MOON_BRICK_STAIRS = create("moon_brick_stairs", new CustomStairsBlock(MOON_BRICKS.getDefaultState(), copyOf(SolObjects.MOON_BRICKS)), true);
+    public static final Block COMET_STONE_STAIRS = create("comet_stone_stairs", new CustomStairsBlock(COMET_STONE.getDefaultState(), copyOf(SolObjects.COMET_STONE)), true);
+    public static final Block SMOOTH_COMET_STONE_STAIRS = create("smooth_comet_stone_stairs", new CustomStairsBlock(SMOOTH_COMET_STONE.getDefaultState(), copyOf(SolObjects.SMOOTH_COMET_STONE)), true);
+
 
     public static final Block MOON_ROCK_SLAB = create("moon_rock_slab", new SlabBlock(copyOf(SolObjects.MOON_ROCK)), true);
     public static final Block COBBLED_MOON_ROCK_SLAB = create("cobbled_moon_rock_slab", new SlabBlock(copyOf(SolObjects.COBBLED_MOON_ROCK)), true);
     public static final Block MOON_BRICK_SLAB = create("moon_brick_slab", new SlabBlock(copyOf(SolObjects.MOON_BRICKS)), true);
+    public static final Block COMET_STONE_SLAB = create("comet_stone_slab", new SlabBlock(copyOf(SolObjects.COMET_STONE)), true);
+    public static final Block SMOOTH_COMET_STONE_SLAB = create("smooth_comet_stone_slab", new SlabBlock(copyOf(SolObjects.SMOOTH_COMET_STONE)), true);
 
     public static final Block MOON_ROCK_WALL = create("moon_rock_wall", new WallBlock(copyOf(SolObjects.MOON_ROCK)), true);
     public static final Block COBBLED_MOON_ROCK_WALL = create("cobbled_moon_rock_wall", new WallBlock(copyOf(SolObjects.COBBLED_MOON_ROCK)), true);
     public static final Block MOON_BRICK_WALL = create("moon_brick_wall", new WallBlock(copyOf(SolObjects.MOON_BRICKS)), true);
+    public static final Block COMET_STONE_WALL = create("comet_stone_wall", new WallBlock(copyOf(SolObjects.COMET_STONE)), true);
+    public static final Block SMOOTH_COMET_STONE_WALL = create("smooth_comet_stone_wall", new WallBlock(copyOf(SolObjects.SMOOTH_COMET_STONE)), true);
+
+
+
+
+    public static final Block ALIEN_GOO = create("goo_block", new Block(FabricBlockSettings.of(Material.STONE).strength(2.5F, 4.0F).breakByTool(FabricToolTags.PICKAXES, 0)), true);
 
     // Special Blocks
     public static final Block COCOON_BLOCK = create("cocoon", new CocoonBlock(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.WOOL).strength(1.0F, 0.5F)), true);

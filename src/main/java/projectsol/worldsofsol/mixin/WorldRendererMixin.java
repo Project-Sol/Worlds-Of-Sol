@@ -32,6 +32,13 @@ public abstract class WorldRendererMixin {
     @Shadow
     public void renderClouds(MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g) {}
 
+    @Inject(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", at = @At(value = "HEAD"), cancellable = true)
+    private void injected(MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g, CallbackInfo ci) {
+        if(world.getRegistryKey() == MoonDimension.MOON_WORLD_KEY){
+            ci.cancel();
+        }
+    }
+
     protected void renderCosmicBackground(MatrixStack matrices, float opacity) {
         try {
             //RenderSystem.enableBlend();
@@ -113,11 +120,6 @@ public abstract class WorldRendererMixin {
     }
 
 
-    @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V"))
-    private void injected(WorldRenderer worldRenderer, MatrixStack matrices, Matrix4f matrix4f, float f, double d, double e, double g) {
-        if(world.getRegistryKey() != MoonDimension.MOON_WORLD_KEY){
-            this.renderClouds(matrices, matrix4f, f, d, e, g);
-        }
-    }
+
 
 }
