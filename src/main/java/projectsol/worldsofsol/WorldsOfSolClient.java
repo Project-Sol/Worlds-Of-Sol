@@ -21,7 +21,7 @@ public class WorldsOfSolClient implements ClientModInitializer {
     public static final EntityModelLayer ZONDAVASTIK_LAYER = new EntityModelLayer(new Identifier("worldsofsol:zondavastik_render_layer"), "zondavastik_render_layer");
 
     public static final EntityModelLayer GREYLIN_LAYER = new EntityModelLayer(new Identifier("worldsofsol:greylin_render_layer"), "greylin_render_layer");
-
+//
     @Override
     public void onInitializeClient() {
         client = MinecraftClient.getInstance();
