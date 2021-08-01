@@ -39,7 +39,9 @@
       "minecraft:basalt_blobs",
       "minecraft:obsidian_blobs"
     ],
-    [],
+    [
+      "worldsofsol:vulcan_roots"
+    ],
     []
   ],
   "starts": [],

@@ -29,7 +29,9 @@
       "worldsofsol:olivine_ore"
     ],
     [],
-    [],
+    [
+      "worldsofsol:lunar_dirt_patch"
+    ],
     []
   ],
   "starts": [],
