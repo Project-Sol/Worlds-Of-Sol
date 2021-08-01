@@ -49,7 +49,7 @@
     },
     "decorator": {
       "config": {
-        "count": 10
+        "count": 5
       },
       "type": "minecraft:count_multilayer"
     }

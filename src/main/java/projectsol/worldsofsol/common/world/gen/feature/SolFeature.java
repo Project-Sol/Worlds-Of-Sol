@@ -29,20 +29,10 @@ public class SolFeature {
             .spreadHorizontally()
             .repeat(2); // Number of veins per chunk
 
-    private static final Feature<DefaultFeatureConfig> COMET = new CometFeature(DefaultFeatureConfig.CODEC);
-
-    public static final ConfiguredFeature<?, ?> COMET_CONFIGURED = COMET.configure(FeatureConfig.DEFAULT)
-            .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(1)));
-
     public static void init(){
         RegistryKey<ConfiguredFeature<?, ?>> oreOxifaribacteOverworldOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(WorldsOfSol.MODID, "ore_oxifaribacte_overworld"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreOxifaribacteOverworldOverworld.getValue(), ORE_OXIFARIBACTE_OVERWORLD);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreOxifaribacteOverworldOverworld);
-
-        Registry.register(Registry.FEATURE, new Identifier(WorldsOfSol.MODID, "comet"), COMET);
-        RegistryKey<ConfiguredFeature<?, ?>> comet = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-                new Identifier(WorldsOfSol.MODID, "comet"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, comet.getValue(), COMET_CONFIGURED);
     }
 }

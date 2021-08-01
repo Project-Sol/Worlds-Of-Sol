@@ -35,7 +35,9 @@
       "worldsofsol:blue_ice_blobs",
       "worldsofsol:packed_ice_blobs"
     ],
-    [],
+    [
+      "worldsofsol:lunar_dirt_patch"
+    ],
     []
   ],
   "starts": [],

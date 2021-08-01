@@ -13,6 +13,7 @@ import projectsol.worldsofsol.WorldsOfSol;
 import projectsol.worldsofsol.common.armor.ExoboneArmor;
 import projectsol.worldsofsol.common.block.CocoonBlock;
 import projectsol.worldsofsol.common.block.CustomStairsBlock;
+import projectsol.worldsofsol.common.block.SpaceFernBlock;
 import projectsol.worldsofsol.common.tools.SolSword;
 import projectsol.worldsofsol.common.tools.SolAxe;
 import projectsol.worldsofsol.common.tools.SolHoe;
@@ -30,6 +31,7 @@ public class SolObjects {
 
     //Blocks
     public static final Block LUNAR_REGOLITH = create("lunar_regolith", new Block(copyOf(Blocks.DIRT).breakByTool(FabricToolTags.SHOVELS).breakByHand(true)), true);
+    public static final Block LUNAR_DIRT = create("lunar_dirt", new Block(copyOf(Blocks.DIRT).breakByTool(FabricToolTags.SHOVELS).breakByHand(true)), true);
     public static final Block MOON_ROCK = create("moon_rock", new Block(FabricBlockSettings.of(Material.STONE).strength(2.5F, 4.0F).breakByTool(FabricToolTags.PICKAXES, 0)), true);
     public static final Block COBBLED_MOON_ROCK = create("cobbled_moon_rock", new Block(copyOf(SolObjects.MOON_ROCK)), true);
     public static final Block MOON_BRICKS = create("moon_bricks", new Block(copyOf(SolObjects.MOON_ROCK)), true);
@@ -48,6 +50,8 @@ public class SolObjects {
 
     public static final Block METEORITE = create("meteorite", new Block(copyOf(Blocks.IRON_BLOCK)), true);
     public static final Block ALIEN_GOO = create("alien_goo", new Block(copyOf(Blocks.MAGMA_BLOCK)), true);
+
+    public static final Block VULCAN_ROOTS = create("vulcan_roots", new SpaceFernBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)), true);
 
     // Special Blocks
     public static final Block COCOON_BLOCK = create("cocoon", new CocoonBlock(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.WOOL).strength(1.0F, 0.5F)), true);
